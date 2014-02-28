@@ -1,0 +1,154 @@
+/* ============================
+   Basic colors
+   ============================ */
+$aptible-blue-grey:       rgba(0,51,102,0.15);
+$aptible-orange:          #ff9933;
+$aptible-lt-blue:         #aadee9;
+$aptible-dark-blue:       #003366;
+$aptible-background-blue: #eef6fe;
+$aptible-code:            #00193A;
+
+$honolulu-blue:           #006DB0;
+$light-gray:              rgb(220,220,220);
+$panel-gray:              rgb(202,202,202);
+
+// brighter than the brand colors below, helps stand out
+$status-green:            #2ECC40;
+$status-yellow:           #FFDC00;
+$status-red:              #FF4136;
+
+/* ============================
+   Bootstrap variable overrides
+   ============================ */
+
+/* sync orange w/ logo */
+$brand-warning:                      $aptible-orange;
+$brand-primary:                      $honolulu-blue;
+$brand-success:                      #00A623;
+$brand-danger:                       #E00000;
+$brand-info:                         #aadee9;
+
+/* Alerts */
+$state-warning-text:                 #333;
+$state-warning-bg:                   lighten($aptible-orange, 20%);
+
+/* dark blue navbar */
+$navbar-inverse-color:               $aptible-dark-blue;
+$navbar-inverse-bg:                  $aptible-dark-blue;
+$navbar-inverse-border:              $aptible-dark-blue;
+$navbar-inverse-toggle-hover-bg:     $aptible-orange;
+$navbar-inverse-toggle-icon-bar-bg:  $light-gray;
+$navbar-inverse-toggle-border-color: $aptible-dark-blue;
+$navbar-inverse-link-color:          $light-gray;
+
+/* dropdown menu in header */
+$dropdown-bg:                        white;
+$dropdown-border:                    rgba(0,0,0,.15);
+$dropdown-fallback-border:           #ccc;
+$dropdown-divider-bg:                #e5e5e5;
+$dropdown-link-color:                #666;
+$dropdown-link-hover-color:          $aptible-dark-blue;
+$dropdown-link-hover-bg:             $dropdown-bg;
+$dropdown-link-active-color:         $aptible-dark-blue;
+$dropdown-link-active-bg:            $dropdown-bg;
+$dropdown-link-disabled-color:       $light-gray;
+$dropdown-header-color:              $light-gray;
+
+// $tooltip-color:                   $aptible-dark-blue;
+// $tooltip-bg:                      $aptible-background-blue;
+$tooltip-color:                      $aptible-dark-blue;
+$tooltip-bg:                         lighten($aptible-background-blue, 2%);
+
+/* Panels */
+$panel-border-radius:                3px;
+$panel-info-border:                  1px;
+$panel-info-text:                    $aptible-dark-blue;
+$panel-info-heading-bg:              $aptible-background-blue;
+$panel-info-border:                  none;
+
+/* for inline code elements */
+/* highlight.js takes care of <code> in <pre> */
+$code-color:                         $aptible-code;
+$code-bg:                            $aptible-background-blue;
+
+$font-family-sans-serif: "proxima-nova", arial, "open-sans", sans-serif;
+$font-family-monospace:  monospace;
+
+$input-border-radius:                .3em;
+
+/* Disable responsive navbars and grid */
+$grid-float-breakpoint:              0px;
+$screen-xs-max:                      0px;
+
+/* Set main container width */
+$container-width:                    1170px;
+
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, right top, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(left, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(left, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(left, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(left, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(left, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin font-smoothing($option) {
+  @if $option == "webkit-only" {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+  @else if $option {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
+
+@mixin nice-button-text {
+  @include font-smoothing(false);
+  letter-spacing: 1px;
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+      only screen and (min-resolution: 192dppx) {
+        font-weight: bold;
+      }
+}
+
+@mixin animate-text-underline($color) {
+  // exclude iPads - problematic :hover behavior
+  @media only screen and (min-width: $screen-sm-min) {
+    &:after {
+      clear: both;
+      display: block;
+      content: "";
+      position: relative;
+      width: 0;
+      left: 50%;
+      height: 2px;
+      background: $color;
+      @include transition(width .2s, left .2s);
+      border-radius: 6px;
+    }
+    &:hover, &:focus {
+      &:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
+@mixin retina-bg($image) {
+  background: asset-url($image + '.png');
+  background-size: contain;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dppx) {
+      background: asset-url($image + '@2x.png');
+      background-size: contain;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "aptible-sass",
+  "version": "0.0.0",
+  "authors": [
+    "Chas Ballew <chas@aptible.com>"
+  ],
+  "description": "SASS stylesheets for Aptible web projects.",
+  "keywords": [
+    "Aptible",
+    "SASS",
+    "CSS"
+  ],
+  "license": "MIT",
+  "homepage": "https://www.aptible.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
