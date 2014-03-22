@@ -1,0 +1,31 @@
+/* =======================================
+   Footer - site wide
+   ======================================= */
+#footer-color-box {
+  background-color: $aptible-dark-blue;
+  min-width: $container-width;
+
+  #footer-wrapper {
+    padding: 1.5em 0;
+  }
+
+  #footer-link-wrapper {
+    a {
+      color: $light-gray;
+      font-size: 16px;
+    }
+  }
+
+  #copyright-text {
+    small {
+      color: $light-gray;
+    }
+  }
+
+  #circle-logo {
+    width: 40px;
+    height: 40px;
+    @include retina-bg('aptible-circle-logo');
+    margin: 0px auto 10px;
+  }
+}

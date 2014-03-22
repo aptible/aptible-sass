@@ -1,0 +1,11 @@
+// TODO: refine this file and include instructions for
+// determining breakpoints
+
+body {
+  @media only screen and (min-width: $screen-sm-min) {
+    padding-top: 72px;
+  }
+  @media only screen and (min-width: $screen-lg-min) {
+    padding-top: 86px;
+  }
+}

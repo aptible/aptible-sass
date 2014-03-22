@@ -1,37 +1,69 @@
 /* ============================
    Basic colors
    ============================ */
-$aptible-blue-grey:       rgba(0,51,102,0.15);
-$aptible-orange:          #ff9933;
-$aptible-lt-blue:         #aadee9;
-$aptible-dark-blue:       #003366;
-$aptible-background-blue: #eef6fe;
-$aptible-code:            #00193A;
+$aptible-blue-grey:                  rgba(0,51,102,0.15);
+$aptible-orange:                     #ff9933;
+$aptible-lt-blue:                    #aadee9;
+$aptible-dark-blue:                  #003366;
+$aptible-background-blue:            #eef6fe;
+$aptible-code:                       #00193A;
 
-$honolulu-blue:           #006DB0;
-$light-gray:              rgb(220,220,220);
-$panel-gray:              rgb(202,202,202);
+$honolulu-blue:                      #006DB0;
+$light-gray:                         rgb(220,220,220);
+$panel-gray:                         rgb(202,202,202);
 
+// Status indicator in the navbar
+// -------------------------
 // brighter than the brand colors below, helps stand out
-$status-green:            #2ECC40;
-$status-yellow:           #FFDC00;
-$status-red:              #FF4136;
+$status-green:                       #2ECC40;
+$status-yellow:                      #FFDC00;
+$status-red:                         #FF4136;
 
 /* ============================
    Bootstrap variable overrides
    ============================ */
 
-/* sync orange w/ logo */
+// Brand colors
+// -------------------------
 $brand-warning:                      $aptible-orange;
 $brand-primary:                      $honolulu-blue;
 $brand-success:                      #00A623;
 $brand-danger:                       #E00000;
 $brand-info:                         #aadee9;
 
-/* Alerts */
-$state-warning-text:                 #333;
-$state-warning-bg:                   lighten($aptible-orange, 20%);
+// Form states, alerts, panels
+// -------------------------
+$state-success-text:                 #3c763d; // default
+$state-success-bg:                   #dff0d8; // default
+$state-success-border:               darken(adjust-hue($state-success-bg, -10), 10%);
 
+$state-warning-text:                 darken(#F29D50, 5%);
+$state-warning-bg:                   #FDF5ED;
+$state-warning-border:               darken(adjust-hue($state-warning-bg, -10), 10%);
+
+$state-danger-text:                  #a94442; // default
+$state-danger-bg:                    #f2dede; // default
+$state-danger-border:                darken(adjust-hue($state-danger-bg, -10), 10%);
+
+$state-info-text:                    $aptible-dark-blue;
+$state-info-bg:                      $aptible-background-blue;
+$state-info-border:                  darken(adjust-hue($aptible-background-blue, 10), 5%);
+
+// Panels
+// -------------------------
+$panel-border-radius:                3px;
+
+$panel-default-text:                 #444;
+$panel-default-border:               lighten($panel-gray, 10%);
+$panel-default-heading-bg:           rgb(245,245,245);
+
+$panel-success-border:               lighten($state-success-border, 5%);
+$panel-info-border:                  lighten($state-info-border, 3%);
+$panel-warning-border:               lighten($state-warning-border, 7%);
+$panel-danger-border:                lighten($state-danger-border, 7%);
+
+// Navbar
+// -------------------------
 /* dark blue navbar */
 $navbar-inverse-color:               $aptible-dark-blue;
 $navbar-inverse-bg:                  $aptible-dark-blue;
@@ -41,7 +73,8 @@ $navbar-inverse-toggle-icon-bar-bg:  $light-gray;
 $navbar-inverse-toggle-border-color: $aptible-dark-blue;
 $navbar-inverse-link-color:          $light-gray;
 
-/* dropdown menu in header */
+// Dropdowns
+// -------------------------
 $dropdown-bg:                        white;
 $dropdown-border:                    rgba(0,0,0,.15);
 $dropdown-fallback-border:           #ccc;
@@ -54,35 +87,28 @@ $dropdown-link-active-bg:            $dropdown-bg;
 $dropdown-link-disabled-color:       $light-gray;
 $dropdown-header-color:              $light-gray;
 
-// $tooltip-color:                   $aptible-dark-blue;
-// $tooltip-bg:                      $aptible-background-blue;
+// Tooltips
+// -------------------------
 $tooltip-color:                      $aptible-dark-blue;
 $tooltip-bg:                         lighten($aptible-background-blue, 2%);
-
-/* Panels */
-$panel-border-radius:                3px;
-$panel-info-border:                  1px;
-$panel-info-text:                    $aptible-dark-blue;
-$panel-info-heading-bg:              $aptible-background-blue;
-$panel-info-border:                  none;
 
 /* for inline code elements */
 /* highlight.js takes care of <code> in <pre> */
 $code-color:                         $aptible-code;
 $code-bg:                            $aptible-background-blue;
 
+// Typography
+// -------------------------
 $font-family-sans-serif: "proxima-nova", arial, "open-sans", sans-serif;
 $font-family-monospace:  monospace;
 
-$input-border-radius:                .3em;
+// Forms
+// -------------------------
+$input-border-radius: .3em;
 
-/* Disable responsive navbars and grid */
-$grid-float-breakpoint:              0px;
-$screen-xs-max:                      0px;
-
-/* Set main container width */
-$container-width:                    1170px;
-
+/* ============================
+          Custom Mixins
+   ============================ */
 
 @mixin linear-gradient($fromColor, $toColor) {
   background-color: $toColor; /* Fallback Color */

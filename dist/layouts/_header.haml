@@ -1,0 +1,38 @@
+%nav{class: "navbar navbar-inverse navbar-static-top", role: "navigation"}
+  .container
+    .navbar-header
+      %a{class: "navbar-brand", href: root_url}
+        #brand_link
+    .navbar-collapse
+      %ul{class: "nav navbar-nav navbar-right"}
+        %li= link_to "Documentation", docs_url
+        %li= link_to "Support", support_url
+        %li{id: "status"}
+          %a{id: "status-link", href: status_url}
+            Status
+            %span{id: "status-circle"}
+        %li{id: "user-nav-profile"}
+          .btn-group
+            %button{type: "button", class: "btn btn-link dropdown-toggle", data: {toggle: "dropdown"}}
+              #user-gravatar{style: "background-image: url(#{gravatar_url(current_aptible_user.email, 80)})"}
+              %p{id: "user-email"}
+                = user_name
+                %span{class: "caret"}
+            %ul{id: "main-nav-dropdown", class: "dropdown-menu", role: "menu"}
+              %li
+                %a{href: organizations_url}
+                  %i{class: "fa fa-random"}
+                  %span Switch Organizations
+              %li
+                %a{href: edit_user_url}
+                  %i{class: "fa fa-gear"}
+                  %span User Settings
+              %li
+                %a{href: edit_organization_url}
+                  %i{class: "fa fa-usd"}
+                  %span Billing
+              %li{class: "divider"}
+              %li
+                %a{href: logout_url}
+                  %i{class: "fa fa-sign-out"}
+                  %span Logout

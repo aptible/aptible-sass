@@ -1,0 +1,17 @@
+#footer-color-box
+  #footer-wrapper.container
+    .row
+      %a{href: "https://www.aptible.com"}
+        #circle-logo
+    .row
+      #footer-link-wrapper.col-xs-6.col-xs-offset-3.text-center
+        %ul.site-footer-links.list-inline
+          %li= link_to "Blog", blog_url, target: "_blank"
+          %li= link_to "Contact", contact_url
+          %li= link_to "Enterprise", enterprise_url
+          %li= link_to "Legal", legal_url
+          %li= link_to "Training", training_url
+    .row
+      .col-xs-12.text-center
+        #copyright-text
+          %small © 2014 Aptible

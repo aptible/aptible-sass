@@ -1,0 +1,45 @@
+.panel-group-wrapper {
+  padding: 2px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  background: #eee;
+  border-radius: 3px;
+}
+
+// Used for a separate heading within a .panel-group-wrapper
+.info-box {
+  border: 1px solid $panel-gray;
+  @include gradient-vertical(white, rgb(245,245,245));
+  display: block;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 10px;
+  text-shadow: rgb(255, 255, 255) 0px 1px 0px;
+  border-radius: $panel-border-radius;
+  margin-bottom: 2px;
+
+  a {
+    cursor: pointer;
+  }
+}
+
+// copies the info-box style for a panel-heading
+.panel-default > .panel-heading {
+  @include gradient-vertical(white, rgb(245,245,245));
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.panel {
+  border: 1px solid $panel-gray;
+  margin-top:0px;
+  margin-bottom: 0px;
+
+  h3:first-of-type {
+    margin-top: 0px;
+  }
+}
+
+#new-ra {
+  width: 50%;
+}

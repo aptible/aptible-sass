@@ -1,0 +1,133 @@
+/* =======================================
+   Header - Navbar
+   ======================================= */
+
+.navbar {
+  margin-bottom: 0px;
+
+  .navbar-brand {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  // inside .navbar
+  #brand_link {
+    width: 235px;
+    height: 60px;
+    @include retina-bg('logo');
+  }
+
+  li {
+    font-size: 18px;
+    margin-top: 32px;
+
+    a {
+      padding: 0px 10px;
+      font-weight: 700;
+    }
+
+    .btn {
+      background-color: $aptible-dark-blue;
+      color: gainsboro;
+      text-decoration: none;
+
+      #user-gravatar {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-size: contain;
+        border-radius: 5px;
+      }
+
+      #user-email {
+        display: inline-block;
+        margin-top: 10px;
+        margin-left: 8px;
+        margin-bottom: 0px;
+        vertical-align: top;
+        -moz-osx-font-smoothing: auto;
+        &:hover {
+          color: lighten(gainsboro, 2%);
+        }
+      }
+    }
+
+    &#user-nav-profile {
+      margin-top: .75em;
+    }
+
+    #main-nav-dropdown {
+      li {
+        margin: .75em 0em;
+        padding: 0em 1em;
+
+        &:first-of-type{
+          margin-top: .5em
+        }
+        &:last-of-type {
+          margin: .5em 0em .33em;
+        }
+
+        a {
+          font-size: .9em;
+          font-weight: normal;
+          padding: 0;
+        }
+
+        i {
+          margin-right: .4em;
+          font-size: 1em;
+          vertical-align: -3%;
+        }
+        .fa-usd { margin-left: 4px;}
+        .fa-gear { margin-left: 2px;}
+      }
+
+      .divider {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  #status {
+    #status-circle {
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      border-radius: 10px;
+      vertical-align: baseline;
+      cursor: pointer;
+
+      // classes added after an external call to statuspage.io
+      // see global.js.coffee
+      &.green {background-color: $status-green;}
+      &.yellow {background-color: $status-yellow;}
+      &.red {background-color: $status-red;}
+    }
+
+    a:hover {
+      > #status-circle {
+        // these classes only added after an external call
+        // see above
+        &.green {background-color: darken($status-green, 10%);}
+        &.yellow {background-color: darken($status-yellow, 10%);}
+        &.red {background-color: darken($status-red, 10%);}
+      }
+    }
+
+    // tooltip added after an external call to statuspage.io
+    // see above
+    .tooltip {
+      .tooltip-inner {
+        border: 1px solid $light-gray;
+      }
+      .tooltip-arrow {
+        top: 1px;
+      }
+      &.in {
+        @include opacity(1);
+      }
+    }
+
+  }
+}

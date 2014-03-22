@@ -1,0 +1,21 @@
+/* Navbar collapse
+   Point at which the navbar becomes uncollapsed.
+   We use this as a variable in a media query in
+   global.scss~#L150 to hide some of the nav links.
+   This allows us to see a navbar on the iPad. */
+// $grid-float-breakpoint:     $screen-sm-min;
+$grid-float-breakpoint:     768px;
+// Point at which the navbar begins collapsing
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+/* Grid Breakpoint
+   This is the main grid breakpoint.
+   Is is the point where the grid starts
+   getting multiple columns. */
+/* Set this based on width of nav links
+   when each link is visible. */
+$screen-sm-min: 992px;
+
+// TODO:
+// fix responsive header/footer/rows handling
+$container-width: 0px;

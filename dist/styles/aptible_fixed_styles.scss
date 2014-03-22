@@ -1,0 +1,14 @@
+nav {
+  min-width: $container-width;
+}
+
+.container {
+  max-width: none;
+  width: $container-width;
+}
+
+.row {
+  // default is -15px L/R, not used here because we're not responsive
+  // and don't need a gutter
+  margin: 0;
+}
