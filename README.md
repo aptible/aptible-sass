@@ -2,26 +2,34 @@
 
 aptible-sass
 ===
-This repo contains Aptible's common assets for many of our customer-facing sites. Compatible with Bootstrap 3.
+This repo contains Aptible's common assets. Depends on:  
 
-It consists of layout partials, stylesheets, and scripts. You can use any or all of them as you see fit.
+- Bootstrap 3
+- HAML
+- SASS
+- Coffeescript
+- Our routes helpers
 
 ### Install
 
 1. Add a `.bowerrc` file to the root of your project. Specify where Bower should install the files with the line `{"directory": "your/path"}`
 2. `bower install aptible-sass`
 3. Add the Bower install directory to your `.gitignore` file.
-4. Add the aptible-sass resources to your asset manifests. For Javascripts, if you use Sprockets, add the aptible-sass directory to `config.asset.paths` in `application.rb`, in addition to the Sprockets manifest. For SASS, `@import` the mixins and a layout file before Bootstrap. Include the main aptible-sass manifest after Bootstrap. See below for an examples.
+4. Add the aptible-sass resources to your asset manifests. For JavaScripts, if you use Sprockets, add the aptible-sass directory to `config.asset.paths` in `application.rb` in addition to the Sprockets manifest. For SASS, `@import` the mixins and a layout file before Bootstrap. Include the main aptible-sass manifest after Bootstrap. See below for an examples.
 
 Example project `application.scss`:
-TODO
+```CSS
+@import "../../../vendor/aptible-sass/dist/styles/aptible_fixed";
+@import "font-awesome";
+@import "policy_manuals";
+```
 
 Example project `application.rb`:
 ```ruby
 require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 Bundler.require(:default, Rails.env)
-module PolicyAptibleCom
+module Policy
   class Application < Rails::Application
     # Sprockets needs this, in addition to the manifest
     config.assets.paths << Rails.root.join(
