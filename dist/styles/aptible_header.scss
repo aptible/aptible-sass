@@ -134,7 +134,6 @@
           // style the text of the dropdown links
           a {
             color: #999;
-            font-size: 1.2em;
 
             // bad smell, shouldn't have to re-enable it
             @include font-smoothing(true);
