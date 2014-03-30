@@ -19,7 +19,7 @@
 
   li {
     font-size: 18px;
-    margin-top: 32px;
+    margin-top: 0px;
 
     a {
       padding: 0px 10px;
@@ -30,6 +30,9 @@
       background-color: $aptible-dark-blue;
       color: gainsboro;
       text-decoration: none;
+      height: 60px;
+      padding: 10px 12px;
+      border: 0;
 
       #user-gravatar {
         display: inline-block;
@@ -53,7 +56,7 @@
     }
 
     &#user-nav-profile {
-      margin-top: .75em;
+      margin-top: 0em;
     }
 
     #main-nav-dropdown {
