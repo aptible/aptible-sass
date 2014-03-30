@@ -16,9 +16,21 @@
             %button{type: "button", id: "dropdown-trigger", class: "btn btn-link dropdown-toggle", data: {toggle: "dropdown"}}
               #user-gravatar{style: "background-image: url(#{gravatar_url(current_aptible_user.email, 80)})"}
               %p{id: "user-name"}
-                = current_aptible_user.name
+                %span= current_aptible_user.name
                 %span{class: "caret"}
             %ul{id: "main-nav-dropdown", class: "dropdown-menu", role: "menu"}
+              %li
+                %a{href: dashboard_url}
+                  %i{class: "fa fa-dashboard"}
+                  %span Dashboard
+              %li
+                %a{href: roles_url}
+                  %i{class: "fa fa-group"}
+                  %span People & Roles
+              %li
+                %a{href: compliance_url}
+                  %i{class: "fa fa-check-square-o"}
+                  %span Compliance
               / %li
               /   %a{href: organizations_url}
               /     %i{class: "fa fa-random"}

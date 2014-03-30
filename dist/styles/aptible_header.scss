@@ -38,11 +38,11 @@
       // this selects the links and the dropdown
       a {
         @include nice-button-text;
+        @include font-smoothing(false);
         margin-top: 20px;
         padding: 0px 10px;
         text-transform: uppercase;
         line-height: 1.8em;
-        @include font-smoothing(false);
       }
 
       #status {
@@ -151,7 +151,10 @@
             font-size: 1em;
             vertical-align: -3%;
           }
-          .fa-usd { margin-left: 4px;}
+          .fa-usd {
+            margin-left: 4px;
+            margin-right: 10px;
+          }
           .fa-gear { margin-left: 2px;}
         }
 
