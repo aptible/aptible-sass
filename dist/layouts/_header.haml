@@ -4,16 +4,16 @@
       %a{class: "navbar-brand", href: dashboard_url}
         #brand_link
     .navbar-collapse
-      %ul{class: "nav navbar-nav navbar-right"}
+      %ul{id: "main-nav-links", class: "nav navbar-nav navbar-right"}
         %li= link_to "Documentation", docs_url
         %li= link_to "Support", support_url
         %li{id: "status"}
-          %a{id: "status-link", href: status_url}
-            Status
+          %a{href: status_url}
+            %span Status
             %span{id: "status-circle"}
         %li{id: "user-nav-profile"}
           .btn-group
-            %button{type: "button", class: "btn btn-link dropdown-toggle", data: {toggle: "dropdown"}}
+            %button{type: "button", id: "dropdown-trigger", class: "btn btn-link dropdown-toggle", data: {toggle: "dropdown"}}
               #user-gravatar{style: "background-image: url(#{gravatar_url(current_aptible_user.email, 80)})"}
               %p{id: "user-name"}
                 = current_aptible_user.name

@@ -6,11 +6,15 @@ body {
 	   Bootstrap messes with buttons and groups otherwise */
 	font-size: 16px;
 
-	h1, h2, h3, h4, p, ul li, a {
+	h1, h2, h3, h4, p, {
 	  text-rendering: optimizeLegibility;
 	}
 
-	background-color: rgb(250,250,250);
+  h1, h2, h3, h4 {
+    font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
+  }
+
+  background-color: rgb(250,250,250);
 
 	@include font-smoothing(true);
 

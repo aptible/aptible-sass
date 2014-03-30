@@ -9,6 +9,7 @@ $aptible-background-blue:            #eef6fe;
 $aptible-code:                       #00193A;
 
 $honolulu-blue:                      #006DB0;
+$super-light-gray:                   rgb(253, 253, 253);
 $light-gray:                         rgb(220,220,220);
 $panel-gray:                         rgb(202,202,202);
 
@@ -75,8 +76,8 @@ $navbar-inverse-link-color:          $light-gray;
 
 // Dropdowns
 // -------------------------
-$dropdown-bg:                        white;
-$dropdown-border:                    rgba(0,0,0,.15);
+$dropdown-bg:                        $super-light-gray;
+$dropdown-border:                    $panel-gray;
 $dropdown-fallback-border:           #ccc;
 $dropdown-divider-bg:                #e5e5e5;
 $dropdown-link-color:                #666;
@@ -99,7 +100,7 @@ $code-bg:                            $aptible-background-blue;
 
 // Typography
 // -------------------------
-$font-family-sans-serif: "proxima-nova", arial, "open-sans", sans-serif;
+$font-family-sans-serif: "myriad-pro", "proxima-nova", verdana, sans-serif;
 $font-family-monospace:  monospace;
 
 // Forms
