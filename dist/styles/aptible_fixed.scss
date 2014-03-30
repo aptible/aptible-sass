@@ -9,9 +9,9 @@
 @import "bootstrap-custom";
 
 // Import after Bootstrap
+@import "aptible_alerts";
+@import "aptible_fixed_styles";
+@import "aptible_footer";
 @import "aptible_global";
 @import "aptible_header";
-@import "aptible_footer";
 @import "aptible_panels";
-@import "aptible_fixed_styles";
-@import "aptible_alerts";
