@@ -29,8 +29,9 @@ AptibleSassScripts.fetchStatusPage = ->
           return # TODO: throw an error and log if the switch falls through
 
 $(document).ready ->
-  AptibleSassScripts.adjustContentHeight()
-  AptibleSassScripts.fetchStatusPage()
+  _.defer ->
+    AptibleSassScripts.adjustContentHeight()
+    AptibleSassScripts.fetchStatusPage()
 
 $(window).resize ->
   AptibleSassScripts.adjustContentHeight()
