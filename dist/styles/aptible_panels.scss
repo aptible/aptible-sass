@@ -17,10 +17,15 @@
   text-shadow: rgb(255, 255, 255) 0px 1px 0px;
   border-radius: $panel-border-radius;
   margin-bottom: 2px;
+  font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
 
   a {
     cursor: pointer;
   }
+}
+
+.panel-heading {
+  font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
 }
 
 // copies the info-box style for a panel-heading
