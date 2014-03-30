@@ -26,8 +26,7 @@ body {
 	// Font Awesome defaults
   i {
     margin-right: .3em;
-    vertical-align: 10%;
-    font-size: .75em;
+    vertical-align: -2%;
   }
 }
 
@@ -36,12 +35,6 @@ body {
   border-left: 1px solid $light-gray;
   border-right: 1px solid $light-gray;
   padding: 1em 3em 3em;
-
-  i {
-    font-size: .9em;
-    vertical-align: -2%;
-    margin-right: 0;
-  }
 
   .title {
     margin-top: 1em;
