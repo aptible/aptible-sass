@@ -9,6 +9,7 @@ This repo contains Aptible's common assets. Depends on:
 - SASS
 - Coffeescript
 - jQuery
+- Underscore.js
 - Our routes helpers
 
 ### Install
