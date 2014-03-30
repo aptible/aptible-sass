@@ -12,9 +12,9 @@
 
   // inside .navbar
   #brand_link {
-    width: 235px;
-    height: 60px;
-    @include retina-bg('logo');
+    width: 154px;
+    height: 40px;
+    @include retina-bg('nav-logo');
   }
 
   li {
@@ -39,7 +39,7 @@
         border-radius: 5px;
       }
 
-      #user-email {
+      #user-name {
         display: inline-block;
         margin-top: 10px;
         margin-left: 8px;

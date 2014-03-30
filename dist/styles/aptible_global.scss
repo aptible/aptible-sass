@@ -31,7 +31,7 @@ body {
   background: white;
   border-left: 1px solid $light-gray;
   border-right: 1px solid $light-gray;
-  padding: 3em;
+  padding: 1em 3em 3em;
 
   i {
     font-size: .9em;
@@ -40,15 +40,11 @@ body {
   }
 
   .title {
-    margin-top: 0;
-    margin-bottom: .8em;
+    margin-top: 1em;
+    margin-bottom: 0em;
     margin-left: 2px;
     font-weight: bold;
     color: $aptible-dark-blue;
-  }
-
-  p {
-    margin-left: 20px;
   }
 }
 

@@ -8,6 +8,7 @@ This repo contains Aptible's common assets. Depends on:
 - HAML
 - SASS
 - Coffeescript
+- jQuery
 - Our routes helpers
 
 ### Install
@@ -19,7 +20,7 @@ This repo contains Aptible's common assets. Depends on:
 
 Example project `application.scss`:
 ```CSS
-@import "../../../vendor/aptible-sass/dist/styles/aptible_fixed";
+@import "../../../vendor/assets/aptible-sass/dist/styles/aptible_fixed";
 @import "font-awesome";
 @import "policy_manuals";
 ```
@@ -49,14 +50,14 @@ Example project `application.js`:
 //= require turbolinks
 //= require bootstrap
 //= require policy
-//= require_directory ../../../vendor/aptible-sass/dist/scripts
+//= require_directory ../../../vendor/assets/aptible-sass/dist/scripts
 //= require_tree .
 ```
 
 ### Use
-
-1. Render partials with references to the full path
-2. Add a `logo.png` and `logo@2x.png` to the asset pipeline. In your custom SASS, redefine `#brand_link.navbar`'s height and width.
+1. For local development of both aptible-sass and a project that depends on it, `bower link` in this directory, then `bower link aptible-sass` in your project.
+2. Render partials with references to the full path
+3. Add a `logo.png` and `logo@2x.png` to the asset pipeline. In your custom SASS, redefine `#brand_link.navbar`'s height and width.
 
 ### TODO  
 - Extract container/layout specific variables into separate spec.
