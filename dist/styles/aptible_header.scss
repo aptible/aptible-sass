@@ -65,9 +65,9 @@
           > #status-circle {
             // these classes only added after an external call
             // see above
-            &.green {background-color: darken($status-green, 10%);}
-            &.yellow {background-color: darken($status-yellow, 10%);}
-            &.red {background-color: darken($status-red, 10%);}
+            &.green {background-color: lighten($status-green, 10%);}
+            &.yellow {background-color: lighten($status-yellow, 20%);}
+            &.red {background-color: lighten(adjust-hue($status-red, 5), 5%);}
           }
         }
 
