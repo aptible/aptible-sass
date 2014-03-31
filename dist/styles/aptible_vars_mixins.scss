@@ -111,6 +111,10 @@ $input-border-radius: .3em;
           Custom Mixins
    ============================ */
 
+@mixin heading-font-family {
+  font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
+}
+
 @mixin linear-gradient($fromColor, $toColor) {
   background-color: $toColor; /* Fallback Color */
   background-image: -webkit-gradient(linear, left top, right top, from($fromColor), to($toColor)); /* Saf4+, Chrome */

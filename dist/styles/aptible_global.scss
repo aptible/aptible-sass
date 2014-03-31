@@ -11,7 +11,7 @@ body {
 	}
 
   h1, h2, h3, h4, .btn {
-    font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
+    @include heading-font-family;
   }
 
   background-color: rgb(250,250,250);

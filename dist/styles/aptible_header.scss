@@ -21,9 +21,10 @@
     // links + collapse bar
     ul#main-nav-links {
       button#dropdown-trigger, a {
+        // redundant w/ button
+        @include heading-font-family;
         font-size: 14px;
         color: #ccc;
-        font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
         font-weight: 600;
 
 

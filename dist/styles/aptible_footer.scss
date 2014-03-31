@@ -11,9 +11,9 @@
 
   #footer-link-wrapper {
     a {
+      @include heading-font-family;
       color: $light-gray;
       font-size: 14px;
-      font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
       font-weight: 600;
       text-transform: uppercase;
       line-height: 1.8em;
