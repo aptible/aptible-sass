@@ -100,7 +100,7 @@ $code-bg:                            $aptible-background-blue;
 
 // Typography
 // -------------------------
-$font-family-sans-serif: "myriad-pro", "proxima-nova", verdana, sans-serif;
+$font-family-sans-serif: "proxima-nova", Helvetica, sans-serif;
 $font-family-monospace:  monospace;
 
 // Forms
@@ -112,7 +112,7 @@ $input-border-radius: .3em;
    ============================ */
 
 @mixin heading-font-family {
-  font-family: "proxima-nova", "myriad-pro", verdana, sans-serif;
+  font-family: "proxima-nova", Helvetica, sans-serif;
 }
 
 @mixin linear-gradient($fromColor, $toColor) {
