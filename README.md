@@ -1,23 +1,28 @@
 ![Aptible](http://aptible-media-assets-manual.s3.amazonaws.com/web-horizontal-350.png)
 
-aptible-sass
-===
-This repo contains Aptible's common assets. Depends on:  
+# aptible-sass
 
-- Bootstrap 3
-- HAML
+Common assets for Aptible's web clients.
+
+Requires: 
+
 - SASS
-- Coffeescript
+- Bootstrap 3
+- CoffeeScript
 - jQuery
-- Underscore.js
-- Our routes helpers
+- ~~Underscore.js~~ (vendored in as of 0.3.0)
 
-### Install
+The layouts require:
 
-1. Add a `.bowerrc` file to the root of your project. Specify where Bower should install the files with the line `{"directory": "your/path"}`
+- HAML
+- Our [aptible-rails](https://github.com/aptible/aptible-rails) route helpers
+
+## Install
+
+1. Add a `.bowerrc` file to your project. Specify where Bower should install the files with `{ "directory": "your/path" }`
 2. `bower install aptible-sass`
-3. Add the Bower install directory to your `.gitignore` file.
-4. Add the aptible-sass resources to your asset manifests. For JavaScripts, if you use Sprockets, add the aptible-sass directory to `config.asset.paths` in `application.rb` in addition to the Sprockets manifest. For SASS, `@import` the mixins and a layout file before Bootstrap. Include the main aptible-sass manifest after Bootstrap. See below for an examples.
+3. `.gitignore` the Bower install directory.
+4. Add the aptible-sass resources to your asset manifests. If you use Sprockets, add the aptible-sass images and scripts directories to `config.asset.paths` in `application.rb`. In addition, add the Javascripts to your Sprockets manifest. For SASS, `@import` the mixins and a layout file before Bootstrap. Include the main aptible-sass manifest after Bootstrap.
 
 Example project `application.scss`:
 ```CSS
@@ -40,6 +45,13 @@ module Policy
       'dist',
       'scripts'
     )
+    config.assets.paths << Rails.root.join(
+      'vendor',
+      'assets',
+      'aptible-sass',
+      'dist',
+      'images'
+    )
   end
 end
 ```
@@ -55,12 +67,8 @@ Example project `application.js`:
 //= require_tree .
 ```
 
-### Use
+## Develop
 1. For local development of both aptible-sass and a project that depends on it, `bower link` in this directory, then `bower link aptible-sass` in your project.
-2. Render partials with references to the full path
-3. Add a `logo.png` and `logo@2x.png` to the asset pipeline. In your custom SASS, redefine `#brand_link.navbar`'s height and width.
-
-### TODO  
-- Extract container/layout specific variables into separate spec.
+2. Render partials with references to the full path.
 
 <small>&copy; 2014 Aptible</small>
