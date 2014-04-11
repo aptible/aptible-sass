@@ -5,9 +5,9 @@
         #brand_link
     .navbar-collapse
       %ul{id: "main-nav-links", class: "nav navbar-nav navbar-right"}
-        %li= link_to "Documentation", docs_url
-        %li= link_to "Support", support_url
-        %li{id: "status"}
+        %li= link_to "Documentation", docs_url, class: 'navlink'
+        %li= link_to "Support", support_url, class: 'navlink'
+        %li{id: "status", class: 'navlink'}
           %a{href: status_url}
             %span Status
             %span{id: "status-circle"}

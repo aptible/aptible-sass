@@ -20,13 +20,8 @@
   .navbar-collapse {
     // links + collapse bar
     ul#main-nav-links {
-      button#dropdown-trigger, a {
-        // redundant w/ button
-        @include heading-font-family;
-        font-size: 14px;
+      #dropdown-trigger, a {
         color: #ccc;
-        font-weight: 600;
-
 
         &:last-of-type {
           padding-right: 10px;
@@ -36,14 +31,25 @@
         }
       }
 
-      // this selects the links and the dropdown
+      #dropdown-trigger {
+        font-size: 14px;
+      }
+
+      // just the navlinks
+      .navlink, .navlink > a {
+        font-size: 16px;
+        @include font-smoothing(true);
+      }
+
+      // this selects the links AND the dropdown
+      // (dropdown alone is styled below)
       a {
         @include nice-button-text;
-        @include font-smoothing(false);
         margin-top: 20px;
         padding: 0px 10px;
         text-transform: uppercase;
         line-height: 1.8em;
+        font-weight: bold;
       }
 
       #status {
