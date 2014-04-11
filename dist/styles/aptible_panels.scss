@@ -47,6 +47,14 @@
   }
 }
 
-#new-ra {
-  width: 50%;
+.halfsie {
+  @include make-xs-column(6);
+  // includes default gutter padding
+  &:first-of-type {
+    padding-left: 0;
+  }
+  &:last-of-type {
+    padding-right: 0;
+  }
 }
+
