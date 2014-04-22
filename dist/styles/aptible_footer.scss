@@ -37,7 +37,8 @@
   #circle-logo {
     width: 40px;
     height: 40px;
-    @include retina-bg('aptible-circle-logo');
+    background: asset-url('aptible-circle-logo.png');
+    background-size: contain;
     margin: 0px auto 10px;
   }
 }
