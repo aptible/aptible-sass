@@ -1,0 +1,173 @@
+header.navbar.status-nav-header {
+  min-height: 28px;
+  margin: 0;
+  border: 0;
+  @include linear-gradient(#1569A0, #044F80);
+
+  .current-status {
+    border: 1px solid #003C63;
+    border-width: 0 1px;
+
+    .current-status-indicator {
+      width: 20px;
+      height: 8px;
+      margin:0 5px 0 0;
+      display: inline-block;
+      border-radius: 4px;
+
+      &.green {
+        background: #30D351;
+      }
+    }
+  }
+
+  .navbar-nav {
+    > li {
+      a {
+        color: #fff;
+        font-size: 11px;
+        font-weight: $weight_semibold;
+        padding: 6px 10px 5px;
+        margin:0;
+
+        &:hover {
+          background: rgba(black, 0.3);
+        }
+      }
+    }
+    &.navbar-right:last-child {
+      margin-right:-5px;
+    }
+  }
+}
+
+header.navbar.primary-nav-header {
+  background: $color_bg_gray;
+  border-bottom: 1px solid $color_border_gray;
+
+  .navbar-brand {
+    text-indent: -9999em;
+    width: 141px;
+    height: 35px;
+    padding: 0;
+    margin: 11px 0 0 0;
+    display: block;
+    @include retina-bg("nav-logo-dark");
+    background-repeat: no-repeat;
+  }
+
+  .nav.user-nav {
+    min-height: 60px;
+    border: 1px solid $color_border_gray;
+    border-width: 0 1px;
+    padding: 0 10px;
+
+    &.navbar-right {
+      margin-right: -5px;
+    }
+
+    > li {
+      margin-top: 11px;
+
+      a {
+        padding: 10px 10px;
+        font-size: 13px;
+        color: $color_primary;
+        font-weight: $weight_semibold;
+      }
+    }
+  }
+
+  .current-user {
+    .gravatar {
+      float: left;
+    }
+  }
+
+  .nav.primary-nav {
+    margin: 0 10px 0 0;
+
+    > li {
+      margin-top: 11px;
+
+      a {
+        padding: 11px 15px 9px;
+        font-size: 13px;
+        font-weight: $weight_semibold;
+        text-transform: uppercase;
+      }
+
+      &.active {
+        a {
+          color: $color_primary;
+          background: none;
+        }
+      }
+    }
+  }
+}
+
+footer.aptible-footer {
+  position: relative;
+  background: $color_bg_gray;
+  border-top: 1px solid $color_border_gray;
+  padding: 50px 0;
+  margin: 50px 0 0 0;
+
+  .aptible-mark {
+    position:absolute;
+    top: -25px;
+    left: 50%;
+    margin-left: -25px;
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    border-radius: 25px;
+    border: 1px solid #E5E5E5;
+    -moz-box-shadow:    0px 4px 0px 0px rgba(0,0,0,0.03);
+    box-shadow:         0px 4px 0px 0px rgba(0,0,0,0.03);
+
+    .mark {
+      width: 34px;
+      height: 32px;
+      margin: 8px auto 0;
+      @include retina-bg("aptible-mark");
+    }
+  }
+
+  ul.split {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      color: $color_subdued;
+    }
+  }
+
+  ul.nav {
+    li.title {
+      padding: 0 0 10px;
+      margin: 0 0 10px;
+      font-weight: $weight_semibold;
+      border-bottom: 1px solid $color_border_gray;
+
+      span {
+        color: $color_subdued;
+        font-weight: $weight_normal;
+      }
+    }
+
+    li:not(.title) {
+      a {
+        line-height: 20px;
+        margin: 0;
+        padding: 0;
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
+  }
+}
