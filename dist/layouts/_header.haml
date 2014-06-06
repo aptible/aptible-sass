@@ -1,46 +1,18 @@
-%nav{class: "navbar navbar-inverse navbar-static-top", role: "navigation"}
+%header.navbar.navbar-static-top.primary-nav-header
   .container
     .navbar-header
-      %a{class: "navbar-brand", href: dashboard_url}
-        #brand_link
-    .navbar-collapse
-      %ul{id: "main-nav-links", class: "nav navbar-nav navbar-right"}
-        %li= link_to "Documentation", docs_url, class: 'navlink'
-        %li= link_to "Support", support_url, class: 'navlink'
-        %li{id: "status", class: 'navlink'}
-          %a{href: status_url}
-            %span Status
-            %span{id: "status-circle"}
-        %li{id: "user-nav-profile"}
-          .btn-group
-            %button{type: "button", id: "dropdown-trigger", class: "btn btn-link dropdown-toggle", data: {toggle: "dropdown"}}
-              #user-gravatar{style: "background-image: url(#{gravatar_url(current_aptible_user.email, 80)})"}
-              %p{id: "user-name"}
-                %span= current_aptible_user.name
-                %span{class: "caret"}
-            %ul{id: "main-nav-dropdown", class: "dropdown-menu", role: "menu"}
-              %li
-                %a{href: dashboard_url}
-                  %i{class: "fa fa-dashboard"}
-                  %span Dashboard
-              %li
-                %a{href: roles_url}
-                  %i{class: "fa fa-group"}
-                  %span People & Roles
-              %li
-                %a{href: compliance_url}
-                  %i{class: "fa fa-check-square-o"}
-                  %span Compliance
-              %li
-                %a{href: edit_user_url}
-                  %i{class: "fa fa-gear"}
-                  %span Your Settings
-              %li
-                %a{href: billing_url}
-                  %i{class: "fa fa-usd"}
-                  %span Billing
-              %li{class: "divider"}
-              %li
-                %a{href: logout_url}
-                  %i{class: "fa fa-power-off"}
-                  %span Logout
+      %a.navbar-brand{ href: '' } Aptible
+    %nav
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          Aptible Inc
+        %li
+          Skylar Anderson
+
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{ href: '' } Apps
+        %li
+          %a{ href: '' } Databases
+        %li
+          %a{ href: '' } Compliance

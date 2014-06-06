@@ -1,30 +1,35 @@
 window.AptibleSassScripts = {}
 
 AptibleSassScripts.adjustContentHeight = ->
-  # First, push the footer down by setting the min-height
-  # of the main yield block
-  minHeight = $(window).height() -
-              $('nav').height() -
-              $('#footer-color-box').height() - 1
-  $('#main-yield-wrapper').css("min-height", minHeight)
+
+  sibling_height = 0;
+  wrapper = $('#main-yield-wrapper')
+
+  wrapper.siblings().each () ->
+    sibling_height += $(this).outerHeight(true)
+
+  wrapper.css 'min-height', $(window).height() - sibling_height
 
 AptibleSassScripts.fetchStatusPage = ->
+  status_icon = $('#status-circle, .current-status-indicator')
+  status_link = $('#status-link, .current-status-link')
+
   window.fetchStatusPage
     pageId: "fmwgqnbnbc4r"
     successCallback: (data) ->
       # add a tooltip with the current status description
-      $("#status-link").tooltip
+      status_link.tooltip
         placement: "bottom"
         title: data.status.description
 
       # ... and turn the light on
       switch data.status.indicator
         when "none"
-          $("#status-circle").addClass("green")
+          status_icon.addClass("green")
         when "minor"
-          $("#status-circle").addClass("yellow")
+          status_icon.addClass("yellow")
         when "major", "critical"
-          $("#status-circle").addClass("red")
+          status_icon.addClass("red")
         else
           return # TODO: throw an error and log if the switch falls through
 

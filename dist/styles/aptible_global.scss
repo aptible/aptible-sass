@@ -1,126 +1,93 @@
-/* =======================================
-   Body - site wide
-   ======================================= */
+html,
 body {
-	/* Include default font-sizing here.
-	   Bootstrap messes with buttons and groups otherwise */
-	font-size: 16px;
+  height: 100%;
+}
 
-	h1, h2, h3, h4, p, {
-	  text-rendering: optimizeLegibility;
-	}
+body {
+  font-size: 13px;
+  text-rendering: optimizeLegibility;
+  @include heading-font-family;
+}
 
-  h1, h2, h3, h4, .btn {
-    @include heading-font-family;
+.gravatar {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 3px;
+
+  img {
+    width: 100%;
+    vertical-align: top;
   }
 
-  background-color: rgb(250,250,250);
-
-	@include font-smoothing(true);
-
-	.btn {
-		border-radius: .3em;
-		@include nice-button-text;
-	}
-
-	// Font Awesome defaults
-  i {
-    margin-right: .3em;
-    vertical-align: -2%;
+  &.xs {
+    height: 16px;
+    width: 16px;
+    margin: 0 5px 0 0;
   }
-}
 
-#main-yield-wrapper {
-  background: white;
-  border-left: 1px solid $light-gray;
-  border-right: 1px solid $light-gray;
-  padding: 1em 3em 3em;
-
-  .title {
-    margin-top: 1em;
-    margin-bottom: 0em;
-    margin-left: 2px;
-    font-weight: bold;
-    color: $aptible-dark-blue;
+  &.sm {
+    height: 24px;
+    width: 24px;
   }
+
+  &.md {
+    height: 40px;
+    width: 40px;
+  }
+
+  &.lg {
+    height: 64px;
+    width: 64px;
+  }
+
+  &.xl {
+    height: 100px;
+    width: 100px;
+  }
+
 }
 
-/* =======================================
-   Global helpers - site wide
-   ======================================= */
-.link-unstyled {
-	color: inherit;
-	text-decoration: none;
-	cursor: pointer;
-	&:active, &:hover, &:visited {
-		color: inherit;
-		text-decoration: none;
-	}
+i.fa {
+  margin-right: 4px;
+  vertical-align: -1px;
 }
 
-.btn-block {
-  display: block;
-  margin-top: 15px;
-  font-size: 1.1em;
+.label,
+.badge {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: $weight-semibold;
 }
 
-.btn-lg-text {
-  margin-top: 15px;
-  font-size: 1.1em;
-}
+.busy-page-indicator {
+  text-align: center;
 
-.btn-group-lg {
-	button {
-		font-size: 1.1em;
-	}
-}
+  .indicator {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background: $color-bg-gray;
+    border: 1px solid $color-border-gray;
+    border-radius: 5px;
 
-.form-group {
-	input, textarea, select {
-		margin-bottom: 1em;
-	}
-}
+    .fa {
+      margin-top: 14px;
+      font-size: 20px;
+      color: $color-subdued;
+    }
+  }
 
-.container-liquid {
-	margin-right: auto;
-	margin-left: auto;
-	width: 100%;
-}
 
-aside.security-tip > .panel-heading {
-	background-color: $aptible-orange;
-}
+  h1 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: $weight-semibold;
+  }
 
-.hr-trans {
-	position: relative;
-
-	&:before, &:after {
-		content: "";
-		position: absolute;
-		top: -1px;
-		display: block;
-		width: 33%;
-		height: 1px;
-	}
-
-	&:before {
-		@include linear-gradient(white, rgba(238,238,238,0.0));
-		left: 0;
-	}
-
-	&:after {
-		@include linear-gradient( rgba(238,238,238,1.0), white);
-		right: 0;
-	}
-}
-
-.caret-up {
-	display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-left:   $caret-width-base solid;
-  border-top: $caret-width-base solid transparent;
-  border-bottom:  $caret-width-base solid transparent;
+  h5 {
+    color: $color-subdued;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+  }
 }
