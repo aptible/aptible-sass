@@ -1,24 +1,51 @@
-#footer-color-box
-  #footer-wrapper.container
+%footer.aptible-footer
+  .aptible-mark
+    .mark
+  .container
     .row
-      %a{href: "https://www.aptible.com"}
-        #circle-logo
-    .row
-      #footer-link-wrapper.col-xs-6.col-xs-offset-3.text-center
-        %ul.site-footer-links.list-inline
-          %li= link_to "About", about_url
-          %li= link_to "Audits", audits_url
-          %li= link_to "Blog", blog_url
-          %li= link_to "Contact", contact_url
-          %li= link_to "Documentation", docs_url
-          %li= link_to "Enterprise", enterprise_url
-          %li= link_to "Legal", legal_url
-          %li= link_to "Pricing", pricing_url
-          %li= link_to "Privacy", privacy_url
-          %li= link_to "Security", security_marketing_url
-          %li= link_to "Support", support_url
-          %li= link_to "Training", training_url
-    .row
-      .col-xs-12.text-center
-        #copyright-text
-          %small © 2014 Aptible
+      .col-sm-10.col-sm-offset-1
+        .row
+          .col-sm-3
+            %ul.nav
+              %li.title My Aptible
+              %li
+                %a{ href: apps_path } Apps
+              %li
+                %a{ href: databases_path } Databases
+              %li
+                %a{ href: compliance_path } Compliance
+              %li
+                %a{ href: organizations_path } My Organizations
+
+          .col-sm-3
+            %ul.nav
+              %li.title Support
+              %li
+                %a{ href: '' } Contact Us
+              %li
+                %a{ href: '' } Getting Started
+              %li
+                %a{ href: '' } Documentation
+              %li
+                %a{ href: '' } Terms/Legal
+
+          .col-sm-6
+            %ul.nav
+              %li.title
+                Aptible, Inc.
+                %span © 2014
+            .row
+              .col-sm-6
+                %ul.split
+                  %li (866) 296 5003
+                  %li
+                    %a{ href: 'mailto:Hello@Aptible.com' } Hello@Aptible.com
+                  %li
+                    .sm
+              .col-sm-6
+                %ul.split
+                  %li.addr
+                    .addr1 483 Broadway
+                    .addr2 Second Floor
+                    .city-state-zip New York, NY 10013
+

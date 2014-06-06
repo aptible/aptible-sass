@@ -1,60 +1,57 @@
-.panel-group-wrapper {
-  padding: 2px;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  background: #eee;
-  border-radius: 3px;
-}
-
-// Used for a separate heading within a .panel-group-wrapper
-.info-box {
-  @include heading-font-family;
-  @include gradient-vertical(white, rgb(245,245,245));
-  border: 1px solid $panel-gray;
-  display: block;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 20px;
-  padding: 10px;
-  text-shadow: rgb(255, 255, 255) 0px 1px 0px;
-  border-radius: $panel-border-radius;
-  margin-bottom: 2px;
-
-  a {
-    cursor: pointer;
-  }
-}
-
-.panel-heading {
-  @include heading-font-family;
-  font-size: 16px;
-}
-
-// copies the info-box style for a panel-heading
-.panel-default > .panel-heading {
-  @include gradient-vertical(white, rgb(245,245,245));
-  font-weight: bold;
-  line-height: 20px;
-}
-
 .panel {
-  border: 1px solid $panel-gray;
-  margin-top:0px;
-  margin-bottom: 0px;
+  margin: 0 0 50px;
 
-  h3:first-of-type {
-    margin-top: 0px;
+  &.panel-default {
+    border-radius: 3px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    -moz-box-shadow:    0px 1px 3px 0px rgba(0,0,0,0.06);
+    box-shadow:         0px 1px 3px 0px rgba(0,0,0,0.06);
+
+    .panel-heading {
+      @extend .clearfix;
+      padding: 10 15px;
+      font-weight: $weight_semibold;
+      background: $color_bg_gray;
+      border-bottom: 1px solid $color_border_gray;
+
+      h3 {
+        float: left;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        .label, .badge {
+          margin: 0 0 0 10px;
+          vertical-align: 2px;
+        }
+        .badge {
+          margin: 0 0 0 2px;
+        }
+      }
+
+      nav {
+        float: right;
+        ul.nav-pills {
+          a {
+            color: $color_subdued;
+            padding: 0 3px;
+            font-size: 13px;
+            margin: 0 0 0 10px;
+
+            &:hover {
+              color: $color_dark_blue;
+              background: none;
+            }
+          }
+        }
+      }
+    }
   }
+
 }
 
-.halfsie {
-  @include make-xs-column(6);
-  // includes default gutter padding
-  &:first-of-type {
-    padding-left: 0;
-  }
-  &:last-of-type {
-    padding-right: 0;
+.panel-group {
+  .panel {
+    margin: 0 0 20px;
   }
 }
-

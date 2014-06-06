@@ -6,7 +6,6 @@ AptibleSassScripts.adjustContentHeight = ->
   wrapper = $('#main-yield-wrapper')
 
   wrapper.siblings().each () ->
-    console.log $(this)
     sibling_height += $(this).outerHeight(true)
 
   wrapper.css 'min-height', $(window).height() - sibling_height
