@@ -1,5 +1,6 @@
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
@@ -51,10 +52,11 @@ i.fa {
   vertical-align: -1px;
 }
 
-.label, .badge {
+.label,
+.badge {
   text-transform: uppercase;
   font-size: 11px;
-  font-weight: $weight_semibold;
+  font-weight: $weight-semibold;
 }
 
 .busy-page-indicator {
@@ -64,14 +66,14 @@ i.fa {
     width: 50px;
     height: 50px;
     margin: 0 auto;
-    background: $color_bg_gray;
-    border: 1px solid $color_border_gray;
+    background: $color-bg-gray;
+    border: 1px solid $color-border-gray;
     border-radius: 5px;
 
     .fa {
       margin-top: 14px;
       font-size: 20px;
-      color: $color_subdued;
+      color: $color-subdued;
     }
   }
 
@@ -79,11 +81,11 @@ i.fa {
   h1 {
     text-align: center;
     font-size: 16px;
-    font-weight: $weight_semibold;
+    font-weight: $weight-semibold;
   }
 
   h5 {
-    color: $color_subdued;
+    color: $color-subdued;
     text-align: center;
     font-size: 14px;
     font-weight: normal;
