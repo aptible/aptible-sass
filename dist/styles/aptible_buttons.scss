@@ -8,3 +8,41 @@ a:active {
 a:hover {
   color: $color-dark-blue;
 }
+
+.btn {
+  font-size: 15px;
+  height: 34px;
+  border: 0;
+  border-radius: 3px;
+  font-weight: $weight-semibold;
+
+  &.btn-sm {
+    font-size: 14px;
+    height: 29px;
+  }
+
+  &.btn-xs {
+    font-size: 12px;
+    height: 25px;
+  }
+
+  &.btn-lg {
+    height: 40px;
+    font-size: 16px;
+    font-weight: $weight-semibold;
+  }
+
+  &.btn-primary {
+    background-color: $color-bright-blue;
+  }
+
+  &.btn-success {
+    background-color: $color-bright-green;
+  }
+
+  &.btn-default {
+    background-color: $color-bg-gray;
+    border: 1px solid $color-border-gray;
+    color: $color-subdued;
+  }
+}

@@ -1,0 +1,22 @@
+.form-control {
+  font-size: 16px;
+  border-color: #d9d9d9;
+  height: 40px;
+  box-shadow: none;
+  border-radius: 3px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-group-addon {
+  background-color: $color-bg-gray;
+  border-color: $color-border-gray;
+
+  .fa,
+  .glyphicon {
+    color: $color-subdued;
+    margin: 0 2px;
+  }
+}

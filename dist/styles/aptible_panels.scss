@@ -9,7 +9,7 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
 
     .panel-heading {
-      @extend .clearfix;
+      @extend %clearfix;
       padding: 10 15px;
       font-weight: $weight-semibold;
       background: $color-bg-gray;
