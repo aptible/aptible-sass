@@ -23,7 +23,8 @@ header.navbar.focus-nav {
       float: none;
       display: inline-block;
 
-      > a, > span {
+      > a,
+      > span {
         display: block;
         padding: 21px 20px 20px;
         font-size: 13px;
@@ -33,7 +34,8 @@ header.navbar.focus-nav {
       }
 
       &.active {
-        a, span {
+        a,
+        span {
           color: $color-primary;
         }
       }
@@ -41,23 +43,25 @@ header.navbar.focus-nav {
   }
 }
 
-#main-yield-wrapper.focus {
-  .page-header {
-    margin: 100px 0 50px;
-    border: 0;
+#main-yield-wrapper {
+  &.focus {
+    .page-header {
+      margin: 100px 0 50px;
+      border: 0;
 
-    h1 {
-      font-size: 24px;
-      line-height: 31px;
-      font-weight: $weight-lighter;
-      text-align: center;
-    }
+      h1 {
+        font-size: 24px;
+        line-height: 31px;
+        font-weight: $weight-lighter;
+        text-align: center;
+      }
 
-    h2 {
-      text-align: center;
-      font-size: 18px;
-      font-weight: $weight-lighter;
-      color: $color-subdued;
+      h2 {
+        text-align: center;
+        font-size: 18px;
+        font-weight: $weight-lighter;
+        color: $color-subdued;
+      }
     }
   }
 }
