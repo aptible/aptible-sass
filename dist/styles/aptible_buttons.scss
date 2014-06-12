@@ -3,10 +3,18 @@ a:link,
 a:visited,
 a:active {
   color: $color-bright-blue;
+  &.btn-primary,
+  &.btn-success {
+    color: #fff;
+  }
 }
 
 a:hover {
   color: $color-dark-blue;
+  &.btn-primary,
+  &.btn-success {
+    color: #fff;
+  }
 }
 
 .btn {
