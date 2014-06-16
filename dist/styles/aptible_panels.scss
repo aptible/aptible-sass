@@ -9,6 +9,12 @@
 .panel {
   margin: 0 0 50px;
 
+  .panel-body {
+    table.table:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   &.panel-default {
     @extend %aptible-panel;
 
