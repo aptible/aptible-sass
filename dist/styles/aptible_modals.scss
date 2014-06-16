@@ -1,5 +1,41 @@
-.modal.info-modal {
+.modal {
+  .modal-header {
+    border-radius: 3px 3px 0 0;
+    background: $color-bg-gray;
+    border-bottom: 1px solid $color-border-gray;
+
+    h4 {
+      font-weight: $weight-semibold;
+      color: $color-primary;
+    }
+
+    .close {
+      margin-top: 4px;
+    }
+  }
+
+  .modal-body {
+    &.subdued {
+      background: $color-bg-gray;
+
+      &.bordered {
+        border-bottom: 1px solid $color-border-gray;
+      }
+    }
+
+    .sub-title {
+      margin: 0 0 30px;
+    }
+
+    .modal-footer {
+      padding: 20px 0 0;
+      margin: 20px 0 0;
+    }
+
+  }
+
   .modal-footer {
-    padding: 20px 0 0;
+    padding: 20px;
+    margin: 0;
   }
 }

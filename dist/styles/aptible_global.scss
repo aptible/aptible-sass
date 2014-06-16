@@ -50,6 +50,18 @@ body {
 i.fa {
   margin-right: 4px;
   vertical-align: -1px;
+
+  &.error {
+    color: #f00;
+  }
+
+  &.success {
+    color: $color-bright-green;
+  }
+
+  &.primary {
+    color: $color-bright-blue;
+  }
 }
 
 .label,
@@ -90,4 +102,32 @@ i.fa {
     font-size: 14px;
     font-weight: normal;
   }
+}
+
+.list-group {
+  border-color: $color-border-gray;
+
+  .list-group-item {
+    &:hover {
+      background: none;
+    }
+
+    &.active,
+    &.active:hover {
+      background: $color-bg-gray;
+      border-color: $color-border-gray;
+      color: $color-primary;
+      font-weight: $weight-semibold;
+    }
+  }
+}
+
+th.table-icon,
+td.table-icon {
+  width: 25px;
+}
+
+th:last-child,
+td:last-child {
+  text-align: right;
 }
