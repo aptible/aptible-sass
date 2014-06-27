@@ -22,11 +22,11 @@
       .panel-body {
         padding: 50px;
       }
+    }
 
-      .panel-body-subdued {
-        background: $color-bg-gray;
-        padding: 25px;
-      }
+    .panel-body-subdued {
+      background: $color-bg-gray;
+      padding: 25px;
     }
 
     &.focus-panel-sm {

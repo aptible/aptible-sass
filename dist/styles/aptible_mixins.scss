@@ -54,12 +54,13 @@
 }
 
 @mixin retina-bg($image) {
-  background: asset-url($image + '.png');
+  background: image-url($image + '.png');
   background-size: contain;
+  background-repeat: no-repeat;
 
   @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-resolution: 192dppx) {
-    background: asset-url($image + '@2x.png');
+    background: image-url($image + '@2x.png');
     background-size: contain;
   }
 }
