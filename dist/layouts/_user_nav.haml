@@ -1,0 +1,21 @@
+%li.dropdown.current-user
+  %a{ href: user_url(current_aptible_user.id), data: { toggle: 'dropdown' } }
+    .gravatar.xs
+      %img{ src: gravatar_url(current_aptible_user.email, 32) }
+    = current_aptible_user.name
+    %b.caret
+
+  %ul.dropdown-menu
+    - if subscribed_and_verified?
+      %li
+        %a{ href: dashboard_url } Dashboard
+        %a{ href: edit_user_url } Your Settings
+    - else
+      - unless email_verified?
+        %li
+          %a{ href: '' } Resend Email Verification
+      %li
+        %a{ href: '' } Update Email
+    %li.divider
+    %li
+      %a{ href: logout_url } Logout

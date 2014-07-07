@@ -1,18 +1,30 @@
 %header.navbar.navbar-static-top.primary-nav-header
   .container
     .navbar-header
-      %a.navbar-brand{ href: '' } Aptible
+      %a.navbar-brand{ href: dashboard_url } Aptible
     %nav
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          Aptible Inc
-        %li
-          Skylar Anderson
+      %ul.nav.nav-pills.navbar-right.user-nav
+        - if current_aptible_user.organizations.count > 1
+          %li.dropdown.current-organization
+            %a{ data: { toggle: 'dropdown' } }
+              = current_organization.name
+              %b.caret
+            %ul.dropdown-menu
+              - auth.organizations.each do |org|
+                %li
+                  %a{ href: organization_url(org.id) }
+        - else
+          %li
+            %a{ href: organization_url(current_organization.id) }
+              = current_organization.name
 
-      %ul.nav.navbar-nav.navbar-right
-        %li
-          %a{ href: '' } Apps
-        %li
-          %a{ href: '' } Databases
-        %li
-          %a{ href: '' } Compliance
+        = render partial: '../../vendor/assets/aptible-sass/dist/layouts/user_nav'
+
+      %ul.nav.nav-pills.navbar-right.primary-nav
+        %li{ class: (controller?('apps') ? 'active' : '') }
+          %a{ href: apps_url } Apps
+        %li{ class: (controller?('databases') ? 'active' : '') }
+          %a{ href: databases_url } Databases
+        %li{ class: (controller?('compliance') || local_assigns[:compliance_page]) ? 'active' : '' }
+          %a{ href: compliance_url } Compliance
+
