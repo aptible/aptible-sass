@@ -1,6 +1,6 @@
-$color-compliance-green: #7BCC65;
-$color-compliance-warning: #D9E07D;
-$color-compliance-danger: #E36666;
+$color-compliance-green: #7bcc65;
+$color-compliance-warning: #d9e07d;
+$color-compliance-danger: #e36666;
 
 .compliance-meta {
   .compliance-icon {
@@ -88,10 +88,6 @@ $color-compliance-danger: #E36666;
 .compliance-status-meta {
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.compliance-documents {
-
 }
 
 .compliance-document {
@@ -184,6 +180,23 @@ $color-compliance-danger: #E36666;
     }
   }
 
+  .document-header {
+    .nav-pills {
+      float: right;
+
+      > li {
+        > a {
+          font-weight: $weight-semibold;
+          color: $color-light;
+        }
+
+        &:hover > a {
+          color: $color-dark-blue;
+        }
+      }
+    }
+  }
+
   .document-container {
     background: $color-bg-gray;
     padding: 0 80px;
@@ -203,21 +216,6 @@ $color-compliance-danger: #E36666;
       .save-document {
         float: right;
       }
-
-      .nav-pills {
-        float: right;
-
-        > li {
-          > a {
-            font-weight: $weight-semibold;
-            color: $color-light;
-          }
-
-          &:hover > a {
-            color: $color-dark-blue;
-          }
-        }
-      }
     }
   }
 
@@ -225,7 +223,7 @@ $color-compliance-danger: #E36666;
     content: '*';
     font-weight: $weight-bold;
     color: #ff6868;
-    display:inline-block;
+    display: inline-block;
     margin: 0 0 0 5px;
   }
 
