@@ -1,0 +1,277 @@
+$color-compliance-green: #7BCC65;
+$color-compliance-warning: #D9E07D;
+$color-compliance-danger: #E36666;
+
+.compliance-meta {
+  .compliance-icon {
+    float: left;
+  }
+
+  .info {
+    margin-left: 60px;
+  }
+
+  .title {
+    font-size: 14px;
+    color: $color-light;
+  }
+
+  .value {
+    font-size: 24px;
+    font-weight: $weight-semibold;
+    margin: 0;
+  }
+
+  .meta-value-link {
+    font-size: 13px;
+    display: inline-block;
+    margin: 0 0 0 10px;
+  }
+}
+
+.compliance-dashboard-list {
+  margin-top: 10px;
+}
+
+.compliance-dashboard-list-title {
+  font-size: 14px;
+  margin: 0;
+  font-weight: $weight-semibold;
+}
+
+.compliance-dashboard-list-item {
+  border-bottom: 1px solid $color-border-gray;
+  padding: 20px 0;
+
+  .compliance-icon {
+    float: left;
+  }
+
+  a.compliance-item-title {
+    font-size: 16px;
+    display: block;
+    margin: 0 0 5px;
+    font-weight: $weight-semibold;
+  }
+
+  .status {
+    color: $color-light;
+  }
+
+  .info {
+    margin-left: 45px;
+  }
+}
+
+.compliance-icon {
+  .fa-check-circle {
+    color: $color-compliance-green;
+  }
+
+  .fa-minus-circle {
+    color: $color-compliance-warning;
+  }
+
+  .fa-times-circle {
+    color: $color-compliance-danger;
+  }
+
+  &.icon-lg {
+    font-size: 38px;
+  }
+
+  &.icon-md {
+    font-size: 28px;
+  }
+}
+
+.compliance-status-meta {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.compliance-documents {
+
+}
+
+.compliance-document {
+  margin: 30px 0;
+
+  .document-meta {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .document-meta-item {
+      border-bottom: 1px solid $color-border-gray;
+      padding: 15px 0;
+
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+
+    .document-meta-title {
+      font-size: 12px;
+      font-weight: $weight-semibold;
+      text-transform: uppercase;
+      color: $color-light;
+      margin: 0 0 14px;
+    }
+
+    .document-user-name {
+      margin-top: -4px;
+    }
+
+    .document-user-email {
+      font-size: 12px;
+      display: block;
+      margin: 0;
+    }
+
+    .document-download-url {
+      font-size: 12px;
+      font-weight: $weight-lighter;
+    }
+
+    .document-user {
+      .gravatar {
+        display: block;
+        float: left;
+        width: 28px;
+        height: 28px;
+      }
+
+      .info {
+        float: left;
+        margin-left: 8px;
+
+        .subdued {
+          font-size: 12px;
+          color: $color-light;
+          font-weight: $weight-lighter;
+        }
+      }
+    }
+
+    .document-meta-value {
+      @extend %clearfix;
+      font-size: 13px;
+      font-weight: $weight-semibold;
+
+      .fa {
+        color: $color-light;
+      }
+    }
+
+  }
+
+  .document-field {
+    margin: 0 0 30px;
+    font-size: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .document-field-label {
+      font-weight: $weight-semibold;
+      margin: 0 0 8px;
+    }
+
+    .document-field-answer {
+      color: $color-light;
+    }
+  }
+
+  .document-container {
+    background: $color-bg-gray;
+    padding: 0 80px;
+
+    header.document-header,
+    footer.document-footer {
+      @extend %clearfix;
+      padding: 25px 0;
+
+      h2 {
+        font-weight: $weight-lighter;
+        font-size: 24px;
+        float: left;
+        margin: 4px 0 0;
+      }
+
+      .save-document {
+        float: right;
+      }
+
+      .nav-pills {
+        float: right;
+
+        > li {
+          > a {
+            font-weight: $weight-semibold;
+            color: $color-light;
+          }
+
+          &:hover > a {
+            color: $color-dark-blue;
+          }
+        }
+      }
+    }
+  }
+
+  label.required:after {
+    content: '*';
+    font-weight: $weight-bold;
+    color: #ff6868;
+    display:inline-block;
+    margin: 0 0 0 5px;
+  }
+
+  .field-value {
+    color: $color-light;
+    font-weight: $weight-semibold;
+    display: block;
+
+    .gravatar {
+      float: left;
+      font-size: 14px;
+    }
+
+    .info {
+      float: left;
+      margin: 3px 0 0 8px;
+    }
+  }
+
+  .panel {
+    margin: 0 0 10px;
+
+    .panel-body {
+      padding: 40px;
+    }
+
+    .panel-heading {
+      padding: 15px;
+      background: none;
+      border-bottom: 1px solid $color-border-gray;
+
+      h3 {
+        color: $color-light;
+        font-weight: $weight-lighter;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .fieldset {
+    .form-group {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
