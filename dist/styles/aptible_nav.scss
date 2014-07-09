@@ -3,6 +3,8 @@ header.navbar.status-nav-header {
   margin: 0;
   border: 0;
   @include linear-gradient(#1569a0, #044f80);
+  //@include linear-gradient(#2BA4EF, #2090D5);
+
 
   .current-status {
     border: 1px solid #003c63;
@@ -45,6 +47,7 @@ header.navbar.status-nav-header {
 header.navbar.primary-nav-header {
   background: $color-bg-gray;
   border-bottom: 1px solid $color-border-gray;
+  margin-bottom: 30px;
 
   .navbar-brand {
     text-indent: -9999em;
