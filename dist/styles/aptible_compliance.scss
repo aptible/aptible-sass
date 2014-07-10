@@ -83,6 +83,14 @@ $color-compliance-danger: #e36666;
   &.icon-md {
     font-size: 28px;
   }
+
+  &.icon-sm {
+    font-size: 20px;
+  }
+
+  &.icon-xs {
+    font-size: 16px;
+  }
 }
 
 .compliance-status-meta {
@@ -177,6 +185,12 @@ $color-compliance-danger: #e36666;
 
     .document-field-answer {
       color: $color-light;
+
+      .checkbox {
+        label, input {
+          font-size: 14px;
+        }
+      }
     }
   }
 
@@ -271,6 +285,22 @@ $color-compliance-danger: #e36666;
         margin-bottom: 20px;
       }
     }
+
+    .checkbox,
+    .radio {
+      color: $color-subdued;
+      padding-left: 25px;
+
+
+      label {
+        font-size: 14px;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-left: -25px;
+      }
+    }
   }
 }
 
@@ -302,5 +332,23 @@ $color-compliance-danger: #e36666;
   .create-first-document-footer {
     padding-top: 30px;
     border-top: 1px solid $color-border-gray;
+  }
+}
+
+.table {
+  .compliance-icon-cell {
+    .compliance-icon {
+      float: left;
+    }
+
+    .compliance-label {
+      float: left;
+      margin: 4px 0 0 4px;
+
+      &.not-compliant {
+        font-weight: $weight-semibold;
+        color: $color-primary;
+      }
+    }
   }
 }

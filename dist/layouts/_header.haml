@@ -21,7 +21,7 @@
         = render partial: '../../vendor/assets/aptible-sass/dist/layouts/user_nav'
 
       %ul.nav.nav-pills.navbar-right.primary-nav
-        %li{ class: (controller?('apps') ? 'active' : '') }
+        %li{ class: (!local_assigns[:compliance_page] && controller?('apps') ? 'active' : '') }
           %a{ href: apps_url } Apps
         %li{ class: (controller?('databases') ? 'active' : '') }
           %a{ href: databases_url } Databases
