@@ -273,3 +273,34 @@ $color-compliance-danger: #e36666;
     }
   }
 }
+
+.create-first-document {
+  .create-document-title {
+    font-size: 26px;
+    font-weight: $weight-semibold;
+    margin: 0 0 5px;
+  }
+
+  .create-document-subtitle {
+    font-size: 18px;
+    color: $color-light;
+  }
+
+  .create-first-document-body {
+    color: $color-light;
+    margin: 20px 0 30px;
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    h5 {
+      color: $color-primary;
+    }
+  }
+
+  .create-first-document-footer {
+    padding-top: 30px;
+    border-top: 1px solid $color-border-gray;
+  }
+}
