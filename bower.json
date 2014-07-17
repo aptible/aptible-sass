@@ -1,9 +1,10 @@
 {
     "name": "aptible-sass",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "authors": [
         "Chas Ballew <chas@aptible.com>",
-        "Skylar Anderson <skylar@aptible.com>"
+        "Skylar Anderson <skylar@aptible.com>",
+        "Frank Macreery <frank@aptible.com>"
     ],
     "description": "SASS stylesheets for Aptible web projects.",
     "keywords": [
