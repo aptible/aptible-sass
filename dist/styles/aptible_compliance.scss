@@ -135,6 +135,10 @@ $color-compliance-danger: #e36666;
 
     .document-download-url {
       font-size: 12px;
+      word-wrap: break-word;
+      display: block;
+      width: 220px;
+      float: left;
       font-weight: $weight-lighter;
     }
 
@@ -165,6 +169,8 @@ $color-compliance-danger: #e36666;
 
       .fa {
         color: $color-light;
+        display: block;
+        float: left;
       }
     }
 
