@@ -209,3 +209,21 @@ a:not([href]) {
   cursor: pointer;
 }
 
+.panel.production-upgrade-cta {
+  .panel-body {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .upgrade-title {
+    margin: 0 0 20px;
+  }
+
+  .upgrade-info {
+    color: $color-subdued;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+}
+
+
