@@ -1,6 +1,6 @@
 header.dashboard-header {
   .breadcrumb {
-    margin: 0 0 0 -13px;
+    margin: 0;
     background: none;
     padding: 8px 0;
 
@@ -31,18 +31,32 @@ header.dashboard-header {
 }
 
 .dropdown-breadcrumbs {
+  margin-right: 5px;
+
+  .btn-group {
+    transition-duration: .5s;
+    border: 1px solid transparent;
+
+    &:hover, &.open {
+      border: 1px solid $color-border-gray;
+      box-shadow: 0 1px 3px rgba(#000, .08);
+      text-decoration: none;
+    }
+
+    .dropdown-toggle {
+      &:hover {
+        background: $color-bg-light-gray;
+      }
+    }
+  }
+
   .btn-link {
     font-size: 18px;
     height: auto;
-    transition-duration: .5s;
-    border: 1px solid transparent;
-    padding: 8px 4px 8px 12px;
+    padding: 8px 6px 8px 12px;
     background: #fff;
 
     &:hover {
-      border: 1px solid $color-border-gray;
-      box-shadow: 0 1px 3px rgba(#000, .08);
-      // background: $color-bg-gray;
       text-decoration: none;
     }
 

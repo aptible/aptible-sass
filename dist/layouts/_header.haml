@@ -21,9 +21,9 @@
         = render partial: '../../vendor/assets/aptible-sass/dist/layouts/user_nav'
 
       %ul.nav.nav-pills.navbar-right.primary-nav
-        %li{ class: (!local_assigns[:compliance_page] && controller?('apps') ? 'active' : '') }
+        %li{ class: ((!local_assigns[:compliance_page] && controller?('apps') || controller?('operations', 'services') && params[:app_id] ) ? 'active' : '') }
           %a{ href: apps_url } Apps
-        %li{ class: (controller?('databases') ? 'active' : '') }
+        %li{ class: (controller?('databases') || (controller?('operations') && params[:database_id])? 'active' : '') }
           %a{ href: databases_url } Databases
         %li{ class: (controller?('compliance') || local_assigns[:compliance_page]) ? 'active' : '' }
           %a{ href: compliance_url } Compliance

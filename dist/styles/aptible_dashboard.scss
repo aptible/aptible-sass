@@ -2,6 +2,8 @@
 @import 'aptible_breadcrumbs';
 
 header.dashboard-header {
+  margin-bottom: 30px;
+
   h1.title {
     margin: 1em 0;
     font-weight: normal;
@@ -23,13 +25,21 @@ header.dashboard-header {
 
   .sub-nav-tabs {
     float: right;
-    margin: 18px 0 0;
+    margin: 6px 0 0;
 
     & > li {
       & > a {
         font-size: 14px;
         color: $color-subdued;
         font-weight: $weight-semibold;
+
+        * {
+          pointer-events: none;
+        }
+
+        .button-label {
+          display: inline;
+        }
 
         &:hover {
           color: $color-dark-blue;
@@ -43,6 +53,12 @@ header.dashboard-header {
         font-weight: bolder;
       }
     }
+  }
+}
+
+.sub-nav-tabs {
+  .button-label {
+    display: none;
   }
 }
 
@@ -63,51 +79,6 @@ header.dashboard-header {
       a {
         color: $color-primary;
         background: $color-bg-gray;
-      }
-    }
-  }
-}
-
-.panel {
-  .panel-body-item {
-    border-bottom: 1px solid #e1e1e1;
-    padding: 20px;
-  }
-
-  .panel-heading {
-    .btn-link {
-      font-size: 12px;
-      padding: 0;
-      margin: 0 0 0 10px;
-      font-weight: bolder;
-    }
-  }
-
-  &.table-panel {
-    border-color: $color-border-dark-gray;
-
-    > header {
-      @extend %clearfix;
-      background: $color-bg-light-gray;
-      padding: 8px 20px;
-      border-radius: 3px 3px 0 0;
-
-      h4 {
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
-        height: 30px;
-        line-height: 30px;
-        float: left;
-      }
-
-      ul.nav-pills {
-        float: right;
-
-        > li > a {
-          padding: 6px 8px;
-          font-weight: $weight-semibold;
-        }
       }
     }
   }
@@ -154,9 +125,8 @@ header.dashboard-header {
   > tbody {
     > tr {
       > td {
-        font-size: 14px;
         border: 0;
-        color: $color-light;
+        color: $color-subdued;
         vertical-align: middle;
         height: 60px;
 
@@ -180,28 +150,34 @@ header.dashboard-header {
       }
     }
 
-    .user-cell {
-      > a {
-        display: block;
-      }
-    }
-
-    .primary-cell {
-      > a {
-        display: block;
-        font-weight: $weight-semibold;
-      }
-    }
-
-    .nav-pills {
-      .button-label {
-        display: none;
-      }
-    }
-
     .gravatar {
       float: left;
       margin-top: 1px;
+    }
+  }
+}
+
+td {
+  font-size: 14px;
+
+  &.user-cell {
+    > a {
+      display: block;
+    }
+  }
+
+  &.app-list-nav-cell {
+    width: 170px;
+  }
+
+  &.last-operation-cell {
+    font-size: 12px;
+  }
+
+  &.primary-cell {
+    > a {
+      display: block;
+      font-weight: $weight-semibold;
     }
   }
 }

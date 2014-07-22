@@ -84,6 +84,7 @@ i.fa {
 
     .fa {
       margin-top: 14px;
+      margin-right: -2px;
       font-size: 20px;
       color: $color-subdued;
     }
@@ -127,7 +128,7 @@ td.table-icon {
   width: 25px;
 }
 
-th:last-child,
-td:last-child {
+td.align-right,
+th.align-right {
   text-align: right;
 }
