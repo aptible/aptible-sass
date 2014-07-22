@@ -64,15 +64,18 @@ $color-compliance-danger: #e36666;
 }
 
 .compliance-icon {
-  .fa-check-circle {
+  .compliance-green {
+    @extend .fa-check-circle;
     color: $color-compliance-green;
   }
 
-  .fa-minus-circle {
+  .compliance-yellow {
+    @extend .fa-minus-circle;
     color: $color-compliance-warning;
   }
 
-  .fa-times-circle {
+  .compliance-red {
+    @extend .fa-times-circle;
     color: $color-compliance-danger;
   }
 
