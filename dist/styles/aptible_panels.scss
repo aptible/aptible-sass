@@ -41,51 +41,51 @@
         text-align: center;
       }
     }
+  }
 
-    .panel-heading {
-      @extend %clearfix;
-      padding: 10px 15px;
-      font-weight: $weight-semibold;
-      background: $color-bg-gray;
-      border-bottom: 1px solid $color-border-gray;
+  .panel-body-item {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 20px;
+  }
 
-      h3 {
-        float: left;
-        font-size: 16px;
-        margin: 0;
-        padding: 0;
+  > header, .panel-heading {
+    @extend %clearfix;
+    background: $color-bg-light-gray;
+    padding: 8px 20px;
+    border-radius: 3px 3px 0 0;
 
-        .label,
-        .badge {
-          margin: 0 0 0 10px;
-          vertical-align: 2px;
-        }
+    h4, h3 {
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      height: 30px;
+      line-height: 30px;
+      float: left;
 
-        .badge {
-          margin: 0 0 0 2px;
-        }
+      .label,
+      .badge {
+        margin: 0 0 0 10px;
+        vertical-align: 2px;
       }
 
-      nav {
-        float: right;
+      .badge {
+        margin: 0 0 0 2px;
+      }
+    }
 
-        ul.nav-pills {
-          a {
-            color: $color-subdued;
-            padding: 0 3px;
-            font-size: 13px;
-            margin: 0 0 0 10px;
+    ul.nav-pills {
+      float: right;
 
-            &:hover {
-              color: $color-dark-blue;
-              background: none;
-            }
-          }
-        }
+      > li > a {
+        padding: 6px 8px;
+        font-weight: $weight-semibold;
       }
     }
   }
 
+  &.table-panel {
+    border-color: $color-border-dark-gray;
+  }
 }
 
 .panel-group {

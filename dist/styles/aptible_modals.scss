@@ -15,6 +15,10 @@
   }
 
   .modal-body {
+    .modal-subtitle {
+      margin: 13px 0 30px;
+    }
+
     &.subdued {
       background: $color-bg-gray;
 

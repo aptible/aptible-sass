@@ -71,6 +71,7 @@ header.navbar.primary-nav-header {
         font-size: 13px;
         font-weight: $weight-semibold;
         text-transform: uppercase;
+        transition-duration: .5s;
       }
 
       &.active {
@@ -105,7 +106,6 @@ header.navbar.primary-nav-header {
   }
 
   .dropdown-menu {
-
     .divider {
       margin: 5px 0;
     }
@@ -119,9 +119,56 @@ header.navbar.primary-nav-header {
     }
   }
 
+  .btn-group {
+    border-radius: 3px;
+    transition-duration: .5s;
+    height:38px;
+
+    &:hover {
+      background: #eee;
+    }
+
+    &.open {
+      .dropdown-toggle {
+        box-shadow: none;
+      }
+    }
+
+    .btn-link {
+      margin-top: 1px;
+      padding-right: 0;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+      padding: 12px 5px;
+    }
+
+    .dropdown-menu {
+      min-width: 0;
+      width: 100%;
+    }
+  }
+
   .current-user {
     .gravatar {
       float: left;
+    }
+
+    i.fa {
+      color: $color-light;
+      margin-left: 4px;
+      margin-right: 4px;
+      font-size: 10px;
+      vertical-align: 2px;
+
+      &:hover {
+        color: $color-primary;
+      }
     }
   }
 }

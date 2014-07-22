@@ -1,18 +1,21 @@
 %li.dropdown.current-user
-  %a{ href: user_url(current_user.id), data: { toggle: 'dropdown' } }
-    .gravatar.xs
-      %img{ src: gravatar_url(current_user.email, 32) }
-    = current_user.name
-    %b.caret
+  .btn-group
+    %a.btn.btn-link.user-link{ href: edit_user_url }
+      .clearfix
+        .gravatar.xs
+          %img{ src: gravatar_url(current_user.email, 32) }
+        .pull-left= current_user.name
+    %a.btn.dropdown-toggle{ data: { toggle: 'dropdown' } }
+      %i.fa.fa-chevron-down
 
-  %ul.dropdown-menu
-    - if current_user.verified?
+    %ul.dropdown-menu
+      - if current_user.verified?
+        %li
+          %a{ href: dashboard_url } Dashboard
+          %a{ href: edit_user_url } Your Settings
+      - else
+        %li
+          %a{ href: '' } Resend Email Verification
+      %li.divider
       %li
-        %a{ href: dashboard_url } Dashboard
-        %a{ href: edit_user_url } Your Settings
-    - else
-      %li
-        %a{ href: '' } Resend Email Verification
-    %li.divider
-    %li
-      %a{ href: logout_url } Logout
+        %a{ href: logout_url } Logout
