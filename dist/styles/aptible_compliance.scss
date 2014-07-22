@@ -33,6 +33,24 @@ $color-compliance-danger: #e36666;
   margin-top: 10px;
 }
 
+.compliance-checklist {
+  padding: 0;
+  opacity: .55;
+  margin: 0 0 0 60px;
+  list-style-type: none;
+
+  .compliance-dashboard-list-item {
+    border: 0;
+    font-size: 16px;
+    font-weight: $weight-semibold;
+
+    .info {
+      float: left;
+      margin: 8px 0 0 12px;
+    }
+  }
+}
+
 .compliance-dashboard-list-title {
   font-size: 14px;
   margin: 0;
