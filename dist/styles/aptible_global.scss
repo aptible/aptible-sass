@@ -132,3 +132,37 @@ td.align-right,
 th.align-right {
   text-align: right;
 }
+
+code {
+ font-family: "Inconsolata", Menlo, Monaco, monospace, Courier;
+ font-size: 13px;
+ color: $color-primary;
+ background: $color-bg-gray;
+}
+
+pre.code, .code-block {
+  padding: 6px 10px;
+  border: 0;
+  background: $color-bg-gray;
+  margin: 15px 0;
+
+  code {
+    display: block;
+  }
+}
+
+.support-instructions {
+  h4 {
+    font-size: 16px;
+    font-weight: $weight-semibold;
+    margin: 15px 0;
+  }
+
+  p {
+    margin: 15px 0;
+  }
+
+  .instructions-section {
+    margin: 0 0 15px;
+  }
+}

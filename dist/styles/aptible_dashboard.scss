@@ -1,5 +1,6 @@
 @import 'aptible_compliance';
 @import 'aptible_breadcrumbs';
+@import 'aptible_wizard';
 
 header.dashboard-header {
   margin-bottom: 30px;
@@ -182,6 +183,10 @@ td {
   }
 }
 
+tr.empty-row td {
+  text-align: center;
+}
+
 .container,
 #main-yield-wrapper {
   width: 970px;
@@ -223,6 +228,23 @@ a:not([href]) {
     color: $color-subdued;
     font-size: 18px;
     margin-bottom: 20px;
+  }
+}
+
+.hero-header {
+  text-align: center;
+  margin: 0 0 50px;
+
+  .title {
+    font-size: 24px;
+    font-weight: $weight-lighter;
+    margin: 0 0 8px;
+  }
+
+  .sub-title {
+    font-size: 18px;
+    color: $color-light;
+    font-weight: $weight-lighter;
   }
 }
 
