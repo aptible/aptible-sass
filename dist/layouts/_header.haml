@@ -25,6 +25,6 @@
           %a{ href: apps_url } Apps
         %li{ class: (controller?('databases') || (controller?('operations') && params[:database_id])? 'active' : '') }
           %a{ href: databases_url } Databases
-        %li{ class: (controller?('compliance') || local_assigns[:compliance_page]) ? 'active' : '' }
+        %li{ class: (controller?('compliance', 'training_statuses') || local_assigns[:compliance_page]) ? 'active' : '' }
           %a{ href: compliance_url } Compliance
 
