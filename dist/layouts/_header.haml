@@ -4,15 +4,15 @@
       %a.navbar-brand{ href: dashboard_url } Aptible
     %nav
       %ul.nav.nav-pills.navbar-right.user-nav
-        - if current_user.organizations.count > 1
+        - if current_user.decorate.cached_organizations.count > 1
           %li.dropdown.current-organization
             %a{ data: { toggle: 'dropdown' } }
               = current_organization.name
               %b.caret
             %ul.dropdown-menu
-              - Aptible::Auth::Organization.all.each do |org|
+              - current_user.decorate.cached_organizations.each do |org|
                 %li
-                  %a{ href: organization_url(org.id) }
+                  %a{ href: organization_url(org.id) }= org.name
         - else
           %li
             %a{ href: organization_url(current_organization.id) }
