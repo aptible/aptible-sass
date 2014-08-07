@@ -19,7 +19,7 @@
                         %span.button-label
                           = org.name
                     - else
-                      %a.org-name.current{ title: "Switch to #{org.name}", href: dashboard_session_url, data: { org_href: org.href, toggle: 'tooltip', placement: 'bottom'} }
+                      %a.org-name.current{ title: "Switch to #{org.name}", href: dashboard_session_url, data: { return_to: return_to_context_url(local_assigns), org_href: org.href, toggle: 'tooltip', placement: 'bottom'} }
                         = org.name
                     %ul.nav.nav-pills.sub-nav-tabs
                       %li
@@ -40,4 +40,3 @@
           %a{ href: databases_url } Databases
         %li{ class: (controller?('compliance', 'training_statuses') || local_assigns[:compliance_page]) ? 'active' : '' }
           %a{ href: compliance_url } Compliance
-
