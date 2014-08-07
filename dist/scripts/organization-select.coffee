@@ -1,5 +1,14 @@
+URI = (url) ->
+  l = document.createElement('a')
+  l.href = url
+  l
+
+use_turbolinks = (url) ->
+  uri = URI(url)
+  typeof Turbolinks isnt 'undefined' && uri.host is document.location.host
+
 visit_url = (url) ->
-  if typeof Turbolinks isnt 'undefined'
+  if use_turbolinks(url)
     Turbolinks.visit url
   else
     document.location.href = url
@@ -20,6 +29,9 @@ $(document).ready ->
             url: link.attr('href')
             type: 'PUT'
             data: { organization_url: orgHref }
+            xhrFields:
+              withCredentials: true
+            crossDomain: true
             success: ->
               visit_url returnHref
 
