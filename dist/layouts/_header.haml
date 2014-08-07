@@ -6,13 +6,26 @@
       %ul.nav.nav-pills.navbar-right.user-nav
         - if current_user.decorate.cached_organizations.count > 1
           %li.dropdown.current-organization
-            %a{ data: { toggle: 'dropdown' } }
-              = current_organization.name
-              %b.caret
-            %ul.dropdown-menu
-              - current_user.decorate.cached_organizations.each do |org|
-                %li
-                  %a{ href: organization_url(org.id) }= org.name
+            .btn-group
+              %a.btn.btn-link{ href: organization_url(current_organization.id) }= current_organization.name
+              %a.btn.dropdown-toggle{ data: { toggle: 'dropdown' } }
+                %i.fa.fa-chevron-down
+              %ul.dropdown-menu
+                - current_user.decorate.cached_organizations.each do |org|
+                  %li
+                    - if current_organization.href == org.href
+                      %span.org-name.current{ title: "Currently using #{org.name}", data: { toggle: 'tooltip', placement: 'bottom' } }
+                        %i.fa.fa-check.success
+                        %span.button-label
+                          = org.name
+                    - else
+                      %a.org-name.current{ title: "Switch to #{org.name}", href: dashboard_session_url, data: { return_to: return_to_context_url(local_assigns), org_href: org.href, toggle: 'tooltip', placement: 'bottom'} }
+                        = org.name
+                    %ul.nav.nav-pills.sub-nav-tabs
+                      %li
+                        %a{ title: 'Edit Settings', href: organization_url(org.id), data: { toggle: 'tooltip', placement: 'bottom' } }
+                          %i.fa.fa-cog
+                          %span.button-label Edit Settings
         - else
           %li
             %a{ href: organization_url(current_organization.id) }
@@ -27,4 +40,3 @@
           %a{ href: databases_url } Databases
         %li{ class: (controller?('compliance', 'training_statuses') || local_assigns[:compliance_page]) ? 'active' : '' }
           %a{ href: compliance_url } Compliance
-

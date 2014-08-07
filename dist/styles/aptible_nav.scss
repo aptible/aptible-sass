@@ -95,7 +95,7 @@ header.navbar.primary-nav-header {
   }
 
   > li {
-    margin-top: 11px;
+    margin-top: 12px;
 
     a {
       padding: 10px;
@@ -120,22 +120,31 @@ header.navbar.primary-nav-header {
   }
 
   .btn-group {
+    border: 1px solid transparent;
     border-radius: 3px;
-    transition-duration: .5s;
-    height: 38px;
+    transition-duration: .3s;
+    height: 36px;
 
-    &:hover {
-      background: #eee;
+    &:hover,
+    &:active,
+    &.open {
+      border: 1px solid #cdcdcd;
+      @include linear-gradient(#fff, #eaeaea);
+      box-shadow: 0 1px 1px 0 rgba(#000, .06);
+
+      .btn-link {
+        background: none;
+      }
     }
 
     &.open {
       .dropdown-toggle {
+        background: none;
         box-shadow: none;
       }
     }
 
     .btn-link {
-      margin-top: 1px;
       padding-right: 0;
 
       &:hover {
@@ -154,7 +163,7 @@ header.navbar.primary-nav-header {
     }
   }
 
-  .current-user {
+  .current-user, .current-organization {
     .gravatar {
       float: left;
     }
@@ -168,6 +177,75 @@ header.navbar.primary-nav-header {
 
       &:hover {
         color: $color-primary;
+      }
+    }
+  }
+
+  .current-organization {
+    .dropdown-menu {
+      width: 260px;
+      padding: 0;
+
+      > li {
+        @extend %clearfix;
+        padding: 8px;
+        border-bottom: 1px solid $color-border-gray;
+
+        &:last-child {
+          border: 0;
+          border-radius: 0 0 3px 3px;
+        }
+
+        &:first-child {
+          border-radius: 3px 3px 0 0;
+        }
+
+        a {
+          clear: none;
+        }
+
+        .org-name {
+          font-size: 13px;
+          display: block;
+          float: left;
+          padding: 8px 6px 6px;
+          font-weight: $weight-semibold;
+
+          i.fa {
+            vertical-align: 1px;
+            &.success {
+              color: $color-bright-green;
+            }
+          }
+        }
+
+        a.org-name {
+          color: $color-bright-blue;
+
+          &:hover {
+            background: none;
+            color: $color-dark-blue;
+          }
+        }
+
+        .sub-nav-tabs {
+          float: right;
+
+          a {
+            padding: 9px 10px 4px;
+            &:hover {
+              i.fa {
+                color: $color-primary;
+              }
+            }
+          }
+
+          i.fa {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+          }
+        }
       }
     }
   }
