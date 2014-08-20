@@ -90,6 +90,34 @@
   }
 }
 
+.panel.panel-default.micro-panel {
+  margin-bottom: 20px;
+
+  .panel-body  {
+    padding:  15px 10px 10px;
+  }
+
+  > header {
+    @extend %microheader;
+    @extend %clearfix;
+    padding: 9px 8px 6px;
+    min-height: 31px;
+    border-top: 0;
+
+    h5 {
+      float: left;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    a {
+      float: right;
+      font-size: 11px;
+      text-transform: none;
+    }
+  }
+}
+
 .panel-group {
   .panel {
     margin: 0 0 20px;
