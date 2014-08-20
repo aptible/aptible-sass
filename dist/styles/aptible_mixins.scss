@@ -74,3 +74,14 @@
     visibility: hidden;
   }
 }
+
+%microheader {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $color-light;
+  font-weight: $weight-semibold;
+  border: 1px solid $color-border-gray;
+  border-width: 1px 0;
+  padding: 8px 8px 5px;
+  @include linear-gradient($color-bg-light-gray, $color-bg-dark-gray);
+}
