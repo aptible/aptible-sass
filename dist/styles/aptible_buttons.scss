@@ -21,6 +21,14 @@ a:hover {
 
 a.btn {
   padding: 8px 12px 6px;
+
+  &.btn-sm {
+    padding: 6px 8px;
+  }
+
+  &.btn-xs {
+    padding: 4px 8px;
+  }
 }
 
 .btn {
