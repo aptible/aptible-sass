@@ -56,8 +56,8 @@ header.navbar.primary-nav-header {
     padding: 0;
     margin: 11px 0 0;
     display: block;
-    background-repeat: no-repeat;
     @include retina-bg('nav-logo-dark');
+    background-repeat: no-repeat;
   }
 
   .nav.primary-nav {
@@ -313,5 +313,27 @@ footer.aptible-footer {
         }
       }
     }
+  }
+}
+
+.sub-header {
+  .sub-header-back {
+    font-size: 11px;
+  }
+}
+
+.sub-header-title {
+  font-size: 16px;
+  font-weight: $weight-semibold;
+  margin: 20px 0;
+
+  i.fa {
+    font-size: 14px;
+  }
+
+  a {
+    font-size: 13px;
+    display: inline-block;
+    margin: 0 0 0 8px;
   }
 }

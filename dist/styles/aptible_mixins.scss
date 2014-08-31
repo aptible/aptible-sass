@@ -62,6 +62,7 @@
   only screen and (min-resolution: 192dppx) {
     background: image-url($image + '@2x.png');
     background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
