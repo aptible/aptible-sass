@@ -8,6 +8,12 @@ a:active {
   &.btn-success {
     color: #fff;
   }
+
+  &[disabled],
+  &[disabled='disabled'],
+  &.disabled {
+    opacity: .3;
+  }
 }
 
 a:hover {

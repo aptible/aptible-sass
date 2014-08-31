@@ -20,7 +20,8 @@
                 %a{ title: 'Edit Settings', href: organization_url(org.id), data: { toggle: 'tooltip', placement: 'bottom' } }
                   %i.fa.fa-cog
                   %span.button-label Edit Settings
-- else
+
+- elsif current_organization
   %li
     %a{ href: organization_url(current_organization.id) }
       = current_organization.name
