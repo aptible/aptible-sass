@@ -43,3 +43,35 @@
     margin: 0;
   }
 }
+
+.modal.modal-wizard {
+  .modal-dialog {
+    width: 980px;
+  }
+
+  .modal-content {
+    background: $color-bg-light-gray;
+    border: 0;
+    border-radius: 4px;
+  }
+
+  .modal-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid $color-border-gray;
+    box-shadow: 0 1px 3px rgba(black, 0.08);
+    background: #fff;
+
+    .close {
+      margin-top: 10px;
+    }
+  }
+
+  .modal-body-section {
+    border-bottom: 1px solid $color-border-gray;
+    padding: 20px 20px 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}

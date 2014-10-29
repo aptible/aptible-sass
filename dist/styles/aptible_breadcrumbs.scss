@@ -2,7 +2,7 @@ header.dashboard-header {
   .breadcrumb {
     margin: 0;
     background: none;
-    padding: 8px 0;
+    padding: 0;
 
     > li {
       font-size: 18px;
@@ -36,7 +36,6 @@ header.dashboard-header {
   .btn-group {
     transition-duration: .5s;
     border: 1px solid transparent;
-    border-radius: 3px;
 
     &:hover, &.open {
       border: 1px solid $color-border-gray;
@@ -47,7 +46,6 @@ header.dashboard-header {
     .dropdown-toggle {
       &:hover {
         background: $color-bg-light-gray;
-        color: $color-dark-blue;
       }
     }
   }

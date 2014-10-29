@@ -1,0 +1,44 @@
+.compliance-meta {
+
+}
+
+.compliance-document-fact {
+  .compliance-icon {
+    float: left;
+    margin: -3px 5px 0 0;
+  }
+
+  .fact-title {
+    color: $color-light;
+    font-size: 13px;
+    margin: 0 0 6px;
+  }
+
+  .fact-value {
+    font-size: 16px;
+    font-weight: $weight-semibold;
+  }
+}
+
+.compliance-document-field {
+  margin-bottom: 25px;
+
+  p {
+    font-size: 14px;
+    margin: 15px 0;
+  }
+}
+
+.compliance-document-roles {
+  margin-top: 15px;
+}
+
+.compliance-document-fieldset {
+  label.required:after {
+    content: '*';
+    font-weight: $weight-bold;
+    color: #ff6868;
+    display: inline-block;
+    margin: 0 0 0 5px;
+  }
+}

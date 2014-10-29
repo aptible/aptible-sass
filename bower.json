@@ -1,12 +1,12 @@
 {
     "name": "aptible-sass",
-    "version": "1.2.8",
+    "version": "1.3.0",
     "authors": [
         "Chas Ballew <chas@aptible.com>",
         "Skylar Anderson <skylar@aptible.com>",
         "Frank Macreery <frank@aptible.com>"
     ],
-    "description": "SASS stylesheets for Aptible web projects.",
+    "description": "Shared SASS and CoffeeScript assets for Aptible web projects.",
     "keywords": [
         "Aptible",
         "SASS",

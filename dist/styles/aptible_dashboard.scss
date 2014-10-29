@@ -1,61 +1,7 @@
 @import 'aptible_compliance';
+@import 'aptible_compliance_document';
 @import 'aptible_breadcrumbs';
 @import 'aptible_wizard';
-
-header.dashboard-header {
-  margin-bottom: 30px;
-
-  h1.title {
-    margin: 1em 0;
-    font-weight: normal;
-    font-size: 26px;
-    float: left;
-  }
-
-  h2.sub-title {
-    margin: 0 0 2em;
-    font-size: 14px;
-  }
-
-  .sub-titled {
-    h1.title {
-      float: none;
-      margin-bottom: 6px;
-    }
-  }
-
-  .sub-nav-tabs {
-    float: right;
-    margin: 6px 0 0;
-
-    & > li {
-      & > a {
-        font-size: 14px;
-        color: $color-subdued;
-        font-weight: $weight-semibold;
-
-        * {
-          pointer-events: none;
-        }
-
-        .button-label {
-          display: inline;
-        }
-
-        &:hover {
-          color: $color-dark-blue;
-          background: $color-bg-gray;
-        }
-      }
-
-      &.active > a {
-        color: $color-primary;
-        background: $color-bg-gray;
-        font-weight: bolder;
-      }
-    }
-  }
-}
 
 .sub-nav-tabs {
   .button-label {
@@ -180,9 +126,8 @@ tr.empty-row td {
   text-align: center;
 }
 
-.container,
-#main-yield-wrapper {
-  width: 970px;
+.container {
+  width: 980px;
 }
 
 form {
