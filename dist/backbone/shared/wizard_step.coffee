@@ -1,21 +1,16 @@
 class App.Views.WizardStep extends Backbone.View
-  className: 'tab-pane fade'
+  className: 'tab-pane'
   initialize: (options) ->
     @title = options.title
-    @config = options.config
-    _.bindAll @, 'on_submit', 'on_change', 'on_submit', 'on_error', 'on_exit', 'detect_enter', 'on_enter', 'render'
-    @after_initialize()
+    _.bindAll @, 'on_submit', 'on_change', 'on_submit', 'on_error', 'on_exit', 'detect_enter', 'on_enter'
 
-  after_initialize: ->
   render: ->
-    @$el.html(@template()(@render_params()))
+    @$el.html(@template(@render_params()))
     @submit_btn = @$('button[type="submit"]').on 'click', @on_submit
     @alert = @$('.alert').hide()
     @error_msg = @$('.error-message')
-    @after_render()
     @
 
-  after_render: ->
   render_params: ->
     @
 
@@ -23,18 +18,14 @@ class App.Views.WizardStep extends Backbone.View
     $target = $(e.target)
     val = $target.val()
     key = $target.attr('id') || $target.attr('name')
-
     if key
       @model.set key, val
 
   on_submit: ->
     if @model.isValid()
-      @model.save(@model.attributes, @submit_params())
+      @model.save(@model.attributes, { patch: true, error: @on_error, success: _.bind(@exit, @) })
     else
       @on_error(@model.errors.join(', '))
-
-  submit_params: ->
-    { patch: true, error: @on_error, success: _.bind(@exit, @) }
 
   on_error: (message, xhr) ->
     if xhr && xhr.responseJSON && xhr.responseJSON.message
@@ -60,6 +51,3 @@ class App.Views.WizardStep extends Backbone.View
 
   on_enter: ->
     @$('input, textarea').first().focus()
-
-  validate: ->
-    true

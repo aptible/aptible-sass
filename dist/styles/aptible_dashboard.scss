@@ -76,6 +76,14 @@
 
         &:last-child {
           padding-right: 20px;
+
+          a.btn:last-child {
+            margin: 0;
+          }
+        }
+
+        .sub-nav-tabs {
+          float: right;
         }
       }
 

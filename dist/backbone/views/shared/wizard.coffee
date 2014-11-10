@@ -22,6 +22,8 @@ class App.Views.Wizard extends Backbone.View
       step.index = index
 
     @render()
+    @tabs = @$('.nav li')
+    @load_first_step()
 
   initialize_config: ->
     {}
@@ -34,7 +36,6 @@ class App.Views.Wizard extends Backbone.View
     @container = @$(@tab_container_class)
 
     _.each @steps, @add_step_view
-    @load_first_step()
     @
 
   render_params: ->
@@ -45,6 +46,7 @@ class App.Views.Wizard extends Backbone.View
 
   add_step_view: (step, index) ->
     @container.append step.render().$el
+    step.$el.data('index', index)
 
     step.on 'exit', () =>
       @complete_step index
@@ -58,9 +60,10 @@ class App.Views.Wizard extends Backbone.View
 
   go_to_step: (step_index) ->
     if @steps[step_index]
-      tabs = @$('.nav li').removeClass('disabled')
-      tabs.eq(step_index).find('a').tab('show')
-      tabs.eq(step_index).nextAll().addClass('disabled')
+      @tabs.removeClass('disabled')
+      @tabs.eq(step_index).find('a').tab('show')
+      @tabs.eq(step_index).nextAll().addClass('disabled')
+
       @steps[step_index].on_enter()
 
   on_wizard_complete: ->
@@ -72,7 +75,6 @@ class App.Views.Wizard extends Backbone.View
 
   on_tab_click: (e)->
     tab = $(e.target)
-    console.log "tab clicked, index: #{tab.data('index')}"
     @current_index = parseInt(tab.data('index'), 10)
 
     return unless typeof tab.data('index') isnt 'undefined' and tab.attr('href')

@@ -105,7 +105,7 @@
   }
 }
 
-.panel.panel-default.panel-subdued {
+.panel.panel-default.panel-subdued, .panel.panel-default.table-panel {
   background: $color-bg-light-gray;
 
   > header, > .panel-heading {
@@ -165,6 +165,12 @@
   }
 }
 
+.panel.panel-default.table-panel {
+  > header, > .panel-heading {
+    border: 0;
+  }
+}
+
 .panel.panel-default.micro-panel {
   .panel-body  {
     padding:  15px 10px 10px;
@@ -192,6 +198,14 @@
       float: right;
       font-size: 11px;
       text-transform: none;
+
+      &.btn-xs {
+        height: auto;
+        padding: 3px 5px 1px;
+        float: right;
+        margin-top: -3px;
+        margin-bottom: -3px;
+      }
     }
   }
 }

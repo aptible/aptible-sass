@@ -9,7 +9,7 @@
 
       %ul.nav.nav-pills.navbar-right.primary-nav
         %li{ class: ((!local_assigns[:compliance_page] && controller?('apps') || controller?('operations', 'services') && params[:app_id] ) ? 'active' : '') }
-          %a{ href: "#{dashboard_url}/apps" } Apps
+          %a{ href: apps_url } Apps
         %li{ class: (controller?('databases') || (controller?('operations') && params[:database_id])? 'active' : '') }
           %a{ href: databases_url } Databases
         %li{ class: (controller?('compliance', 'training_statuses') || local_assigns[:compliance_page]) ? 'active' : '' }

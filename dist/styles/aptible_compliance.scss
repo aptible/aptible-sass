@@ -40,7 +40,6 @@ $color-compliance-danger: #e36666;
 }
 
 .compliance-status-panel {
-
   .compliance-status {
     text-align: center;
     padding: 30px 0px 10px;
@@ -89,9 +88,6 @@ $color-compliance-danger: #e36666;
     }
   }
 }
-
-
-
 
 .compliance-dashboard-list {
   margin-top: 10px;
@@ -363,6 +359,17 @@ $color-compliance-danger: #e36666;
 }
 
 .create-first-document {
+  font-size: 14px;
+  padding: 10px 50px 50px;
+
+  p, blockquote {
+    font-size: 14px;
+  }
+
+  .create-first-document-header {
+    margin: 10px 0 30px;
+  }
+
   .create-document-title {
     font-size: 26px;
     font-weight: $weight-semibold;

@@ -23,10 +23,30 @@
 .compliance-document-field {
   margin-bottom: 25px;
 
+  .formatted {
+    white-space: pre-line;
+  }
+
   p {
     font-size: 14px;
     margin: 15px 0;
   }
+
+  .checkbox label, .radio label {
+    font-size: 13px;
+  }
+
+  input[type="radio"], input[type="checkbox"] {
+    margin-top: 1px;
+  }
+  
+}
+
+.compliance-body-section-title {
+  font-size: 15px;
+  font-weight: $weight-semibold;
+  color: $color-primary;
+  margin: 0 0 20px;
 }
 
 .compliance-body-title {
@@ -34,6 +54,7 @@
   background: none;
   padding: 0;
   border: 0;
+  margin:0 0 15px;
 
   a {
     text-transform: none;
@@ -45,15 +66,8 @@
 }
 
 .compliance-document-roles {
-  margin-top: 15px;
-
   .modal-wizard & {
     margin-bottom: 10px;
-    margin-top: 0;
-  }
-
-  .modal-wizard .review-compliance-document & {
-    margin-top: 15px;
   }
 }
 
@@ -76,6 +90,57 @@
 
 .new-risk-analysis-modal {
   .edit-contacts-link {
+  }
+}
+
+.edit-compliance-document-contact {
+  .edit-contact-panel {
     display: none;
+
+    .alert {
+      padding: 5px 8px;
+      margin-bottom: 10px;
+    }
+
+    .editing & {
+      display: block;
+
+      input.form-control {
+        padding: 3px 8px;
+        height: 32px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .editing & .compliance-document-contact {
+    display: none;
+  }
+
+  .dropdown-select {
+    display: block;
+
+    .dropdown-toggle {
+      display: block;
+      margin-bottom: 10px;
+      text-align: left;
+      width: 100%;
+      color: $color-primary;
+
+      i.fa {
+        float: right;
+        margin-top: 3px;
+      }
+    }
+  }
+}
+
+.panel.panel-default > header {
+  .compliance-label, .compliance-icon {
+    float: left;
+  }
+
+  .compliance-icon {
+    margin-right: 10px;
   }
 }

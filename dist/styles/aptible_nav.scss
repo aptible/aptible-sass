@@ -144,50 +144,6 @@ header.dashboard-header {
     }
   }
 
-  .btn-group {
-    border: 1px solid transparent;
-    border-radius: 3px;
-    transition-duration: .3s;
-    height: 36px;
-
-    &:hover,
-    &:active,
-    &.open {
-      border: 1px solid #cdcdcd;
-      @include linear-gradient(#fff, #eaeaea);
-      box-shadow: 0 1px 1px 0 rgba(#000, .06);
-
-      .btn-link {
-        background: none;
-      }
-    }
-
-    &.open {
-      .dropdown-toggle {
-        background: none;
-        box-shadow: none;
-      }
-    }
-
-    .btn-link {
-      padding-right: 0;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-
-    .dropdown-toggle {
-      cursor: pointer;
-      padding: 12px 5px;
-    }
-
-    .dropdown-menu {
-      min-width: 0;
-      width: 100%;
-    }
-  }
-
   .current-user, .current-organization {
     .gravatar {
       float: left;
@@ -401,3 +357,83 @@ footer.aptible-footer {
     margin: -2px 5px 0 0;
   }
 }
+
+.nav.user-nav .btn-group, .btn-group.dropdown-select {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition-duration: .3s;
+  height: 36px;
+
+  &:hover,
+  &:active,
+  &.open {
+    border: 1px solid #cdcdcd;
+    @include linear-gradient(#fff, #eaeaea);
+    box-shadow: 0 1px 1px 0 rgba(#000, .06);
+
+    .btn-link {
+      background: none;
+    }
+  }
+
+  &.open {
+    .dropdown-toggle {
+      background: none;
+      box-shadow: none;
+    }
+  }
+
+  .btn-link {
+    padding-right: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .dropdown-toggle {
+    cursor: pointer;
+    padding: 12px 5px;
+  }
+
+  .dropdown-menu {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+.btn-group.dropdown-select {
+  border: 1px solid #cdcdcd;
+  @include linear-gradient(#fff, #eaeaea);
+  box-shadow: 0 1px 1px 0 rgba(#000, .06);
+
+  .dropdown-menu {
+    font-size: 13px;
+    left: -1px;
+    right: -1px;
+    width: auto;
+
+    > li {
+      > a {
+        padding: 8px 10px;
+      }
+    }
+  }
+
+  .dropdown-toggle {
+    padding: 10px;
+    font-size: 13px;
+    color: $color-primary;
+    font-weight: 600;
+
+    i.fa {
+      font-size: 10px;
+    }
+  }
+
+  &.open {
+
+  }
+}
+
+
