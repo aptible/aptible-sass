@@ -1,8 +1,137 @@
+.nav.wizard-nav {
+  @extend %clearfix;
+  border: 0;
+
+  > li.disabled a {
+    pointer-events: none;
+  }
+
+  > li,
+  > li.disabled {
+    display: block;
+    position: relative;
+    float: left;
+
+    > span,
+    > a {
+      font-size: 16px;
+      font-weight: $weight-semibold;
+      color: $color-light;
+      background: none;
+      padding: 10px 15px 10px 23px;
+      display: inline-block;
+
+      &:hover {
+        background: none;
+        color: $color-primary;
+      }
+    }
+
+    &.active,
+    &.completed {
+      > span,
+      > a {
+        color: $color-primary;
+      }
+
+      &:before {
+        background: $color-bright-blue;
+      }
+    }
+
+    &.completed {
+      &:before {
+        @extend .fa;
+        @extend .fa-check;
+        background-color: $color-bright-blue;
+        font-size: 10px !important;
+        text-indent: 0;
+        text-align: center;
+        color: #fff;
+        line-height: 14px !important;
+      }
+    }
+
+    &:before,
+    &:after {
+      text-indent: -3000em;
+      z-index: 0;
+      display: inline-block;
+      position: absolute;
+    }
+
+    &:before {
+      content: '.';
+      height: 14px;
+      width: 14px;
+      top: 14px;
+      border-radius: 7px;
+      background-color: $color-bg-dark-gray;
+    }
+
+    .fa-chevron-right {
+      color: $color-bg-dark-gray;
+      font-size: 14px;
+      margin: 0 14px 0 0;
+      vertical-align: 0;
+    }
+
+    &:last-child {
+      .fa-chevron-right {
+        display: none;
+      }
+    }
+  }
+}
+
+.modal-steps {
+  .nav.wizard-nav {
+    float: left;
+  }
+
+  .nav.wizard-actions {
+    float: right;
+    margin: 5px 0 0;
+
+    > li {
+      > a.cancel {
+        padding: 4px 8px;
+        float: left;
+        margin: 3px 10px 0 0;
+      }
+    }
+  }
+}
+
+.modal-wizard {
+  label {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  textarea.form-control {
+    font-size: 14px;
+  }
+
+  .checkbox,
+  .radio {
+    label {
+      font-size: 14px;
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
 .nav.wizard {
+  @extend %clearfix;
   border: 0;
   position: relative;
   text-align: center;
-  @extend %clearfix;
 
   &:before {
     content: '.';
@@ -51,7 +180,8 @@
       line-height: 14px !important;
     }
 
-    > a, > span {
+    > a,
+    > span {
       position: relative;
       font-size: 16px;
       font-weight: $weight-semibold;

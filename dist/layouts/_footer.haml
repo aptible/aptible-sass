@@ -23,11 +23,14 @@
               %li
                 %a{ href: contact_support_url } Contact Us
               %li
-                %a{ href: support_url } Knowledge Base
+                %a{ href: support_url } Support
               %li
                 %a{ href: responsible_disclosure_url } Responsible Disclosure
-              %li
-                %a{ href: status_url } Status
+              %li.current-status
+                %a.current-status-link{ href: status_url }
+                  Status
+                  %i.current-status-indicator
+
               %li
                 %a{ href: legal_url } Legal
 
@@ -40,8 +43,8 @@
               .col-sm-6
                 %ul.split
                   %li.addr
-                    .addr1 455 Mission Bay Blvd South
-                    .city-state-zip San Francisco, CA 94158
+                    .addr1 155 Water St
+                    .city-state-zip Brooklyn, NY 11201
               .col-sm-6
                 %ul.split
                   %li (866) 296-5003
