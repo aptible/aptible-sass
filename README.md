@@ -72,3 +72,5 @@ Example project `application.js`:
 2. Render partials with references to the full path.
 
 <small>&copy; 2014 Aptible</small>
+
+[<img src="https://s.gravatar.com/avatar/9b58236204e844e3181e43e05ddb0809?s=60" style="border-radius: 50%;" alt="@sandersonet" />](https://github.com/sandersonet)
