@@ -35,11 +35,6 @@
   .checkbox label, .radio label {
     font-size: 13px;
   }
-
-  input[type="radio"], input[type="checkbox"] {
-    margin-top: 1px;
-  }
-  
 }
 
 .compliance-body-section-title {
@@ -69,6 +64,12 @@
   .modal-wizard & {
     margin-bottom: 10px;
   }
+}
+
+.compliance-document-created-at {
+  font-size: 12px;
+  color: $color-light;
+  padding: 4px 0;
 }
 
 .empty-compliance-field {

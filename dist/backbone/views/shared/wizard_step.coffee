@@ -3,10 +3,11 @@ class App.Views.WizardStep extends Backbone.View
   initialize: (options) ->
     @title = options.title
     @config = options.config
-    _.bindAll @, 'on_submit', 'on_change', 'on_submit', 'on_error', 'on_exit', 'detect_enter', 'on_enter', 'render'
+    _.bindAll @, 'on_submit', 'on_change', 'on_submit', 'on_error', 'on_exit', 'detect_enter', 'on_enter', 'render', 'after_initialize'
     @after_initialize()
 
-  after_initialize: ->
+  after_initialize: $.noop
+
   render: ->
     @$el.html(@template()(@render_params()))
     @submit_btn = @$('button[type="submit"]').on 'click', @on_submit
@@ -15,16 +16,26 @@ class App.Views.WizardStep extends Backbone.View
     @after_render()
     @
 
-  after_render: ->
+  after_render: $.noop
+
   render_params: ->
     @
 
   on_change: (e) ->
     $target = $(e.target)
+
+    type = $target.attr('type')
     val = $target.val()
     key = $target.attr('id') || $target.attr('name')
 
-    if key
+    return unless key
+
+    if type is 'checkbox'
+      @model.set key, $target.is(':checked')
+    else if type is 'radio'
+      val = $("input[name=#{key}]:checked").val()
+      @model.set key, val is 'on'
+    else
       @model.set key, val
 
   on_submit: ->

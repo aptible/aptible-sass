@@ -6,8 +6,10 @@ window.AptibleSassScripts =
   adjustContentHeight: ->
     sibling_height = 0;
     wrapper = $('#main-yield-wrapper')
+    siblings = wrapper.siblings().filter (index, el)->
+      $(el).prop('tagName') isnt 'SCRIPT'
 
-    wrapper.siblings().each () ->
+    siblings.each () ->
       sibling_height += $(this).outerHeight(true)
 
     wrapper.css 'min-height', $(window).height() - sibling_height
@@ -35,7 +37,5 @@ window.AptibleSassScripts =
           else
             return # TODO: throw an error and log if the switch falls through
 
-$(document).ready ->
-  _.delay AptibleSassScripts.initialize, 500
-
+$(document).ready AptibleSassScripts.initialize
 $(window).resize AptibleSassScripts.adjustContentHeight

@@ -100,7 +100,8 @@
 
 .modal-wizard {
   label {
-    margin-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 
   .form-group {
@@ -109,6 +110,14 @@
 
   textarea.form-control {
     font-size: 14px;
+  }
+
+  .checkbox, .radio {
+    label {
+      font-size: 14px;
+      display: block;
+      margin: 0;
+    }
   }
 }
 

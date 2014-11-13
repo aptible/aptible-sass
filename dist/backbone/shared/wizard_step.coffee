@@ -1,4 +1,4 @@
-class App.Views.WizardStep extends Backbone.View
+class App.Views.WizardStepOld extends Backbone.View
   className: 'tab-pane'
   initialize: (options) ->
     @title = options.title

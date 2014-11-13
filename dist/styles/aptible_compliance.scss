@@ -360,7 +360,7 @@ $color-compliance-danger: #e36666;
 
 .create-first-document {
   font-size: 14px;
-  padding: 10px 50px 50px;
+  padding: 20px 30px 30px;
 
   p, blockquote {
     font-size: 14px;
@@ -445,6 +445,14 @@ $color-compliance-danger: #e36666;
 
     &.actionable {
       @extend %clearfix;
+    }
+  }
+}
+
+.compliance-sidebar-nav {
+  .nav.sidebar-nav {
+    &:first-child {
+      margin-top: -5px;
     }
   }
 }

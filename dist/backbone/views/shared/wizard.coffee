@@ -8,7 +8,7 @@ class App.Views.Wizard extends Backbone.View
     'click .nav li a': 'on_tab_click'
 
   tab_container_class: '.tab-content'
-  bind_to: ['render', 'add_step_view', 'on_wizard_complete', 'on_tab_click']
+  bind_to: ['render', 'add_step_view', 'on_wizard_complete', 'on_next', 'on_cancel', 'on_open', 'on_previous', 'on_save_success']
   current_index: 0
 
   initialize: ->
@@ -81,3 +81,59 @@ class App.Views.Wizard extends Backbone.View
 
     content = $(tab.attr('href')).show()
     @go_to_step @current_index
+
+  ################
+
+  index: (index)->
+    @current_index = index
+    @tabs.eq(@current_index).find('a').tab('show')
+    @steps[@current_index].on_enter()
+
+    @on_update_index()
+
+  on_update_index: ->
+    previous = 'Previous'
+    previous = 'Cancel' if @current_index is 0
+
+    next = 'Save and continue'
+    next = 'Finish' if @current_index is (@steps.length - 1)
+
+    @config.set previous_button: previous, next_button: next
+
+  on_show_tab: (e) ->
+    tab = $(e.target)
+    return tab.removeClass('disabled').tab('show') if tab.hasClass('disabled')
+
+  on_next: ->
+    return false unless @steps[@current_index].validate()
+    return @on_complete() if @current_index is (@steps.length - 1)
+    @index(@current_index + 1)
+
+  on_previous: ->
+    return @$('.modal').modal('hide') if @current_index is 0
+    @index(@current_index - 1)
+
+  on_cancel: ->
+    return if @completed
+    previous = @model.history[0]
+    @model.set(previous).trigger('reset')
+
+  on_open: ->
+    @index(0)
+
+  on_complete: ->
+    @model.save(@model.attributes, { success: @on_save_success })
+
+  on_save_success: ->
+    @$('.modal').modal('hide')
+    document.location.href = document.location.href
+
+  update_previous_button: (config, value) ->
+    @$('.cancel-button-text').text(value)
+
+  update_next_button: (config, value)->
+    @$('.next-button-text').text(value)
+
+  on_tab_click: (e) ->
+    tab_index = $(e.target).data('index')
+    @index(tab_index)

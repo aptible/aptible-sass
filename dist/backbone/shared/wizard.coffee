@@ -1,4 +1,4 @@
-class App.Views.Wizard extends Backbone.View
+class App.Views.WizardOld extends Backbone.View
   template: JST['dist/templates/wizard']
   events:
     'click .ensure-configure-manually': 'on_ensure_configure_manually'
