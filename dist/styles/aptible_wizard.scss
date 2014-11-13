@@ -1,17 +1,19 @@
 .nav.wizard-nav {
-  border: 0;
   @extend %clearfix;
+  border: 0;
 
   > li.disabled a {
     pointer-events: none;
   }
 
-  > li, > li.disabled {
+  > li,
+  > li.disabled {
     display: block;
     position: relative;
     float: left;
 
-    > span, > a {
+    > span,
+    > a {
       font-size: 16px;
       font-weight: $weight-semibold;
       color: $color-light;
@@ -25,8 +27,10 @@
       }
     }
 
-    &.active, &.completed {
-      > span, > a {
+    &.active,
+    &.completed {
+      > span,
+      > a {
         color: $color-primary;
       }
 
@@ -48,7 +52,8 @@
       }
     }
 
-    &:before, &:after {
+    &:before,
+    &:after {
       text-indent: -3000em;
       z-index: 0;
       display: inline-block;
@@ -66,7 +71,7 @@
 
     .fa-chevron-right {
       color: $color-bg-dark-gray;
-      font-size:14px;
+      font-size: 14px;
       margin: 0 14px 0 0;
       vertical-align: 0;
     }
@@ -86,12 +91,12 @@
 
   .nav.wizard-actions {
     float: right;
-    margin: 5px 0 0 0;
+    margin: 5px 0 0;
 
     > li {
       > a.cancel {
         padding: 4px 8px;
-        float:left;
+        float: left;
         margin: 3px 10px 0 0;
       }
     }
@@ -112,7 +117,8 @@
     font-size: 14px;
   }
 
-  .checkbox, .radio {
+  .checkbox,
+  .radio {
     label {
       font-size: 14px;
       display: block;
@@ -121,13 +127,11 @@
   }
 }
 
-
-
 .nav.wizard {
+  @extend %clearfix;
   border: 0;
   position: relative;
   text-align: center;
-  @extend %clearfix;
 
   &:before {
     content: '.';
@@ -176,7 +180,8 @@
       line-height: 14px !important;
     }
 
-    > a, > span {
+    > a,
+    > span {
       position: relative;
       font-size: 16px;
       font-weight: $weight-semibold;

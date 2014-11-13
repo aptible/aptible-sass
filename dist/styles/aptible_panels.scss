@@ -31,7 +31,7 @@
 
     &:last-child {
       .panel-col-body {
-        border:0;
+        border: 0;
       }
     }
   }
@@ -115,16 +115,19 @@
   }
 }
 
-.panel.panel-default.panel-subdued, .panel.panel-default.table-panel {
+.panel.panel-default.panel-subdued,
+.panel.panel-default.table-panel {
   background: $color-bg-light-gray;
 
-  > header, > .panel-heading {
+  > header,
+  > .panel-heading {
     padding: 10px 20px;
     border-bottom: 1px solid $color-border-gray;
-    box-shadow: 0 1px 3px rgba(black, 0.08);
+    box-shadow: 0 1px 3px rgba(#000, .08);
     background: #fff;
 
-    h5, h3 {
+    h5,
+    h3 {
       margin: 5px 0;
       font-size: 14px;
       font-weight: $weight-semibold;
@@ -141,7 +144,7 @@
       }
 
       i.fa {
-        margin: 0
+        margin: 0;
       }
     }
 
@@ -151,7 +154,7 @@
 
     .nav-pills {
       float: right;
-      margin: 6px 0 0 0;
+      margin: 6px 0 0;
 
       > li a {
         margin-left: 5px;
@@ -169,7 +172,7 @@
     background: #fff;
     padding: 20px 20px 15px;
     border-bottom: 1px solid $color-border-gray;
-    box-shadow: 0 1px 3px rgba(black, 0.08);
+    box-shadow: 0 1px 3px rgba(#000, .08);
   }
 
   .list-group {
@@ -197,15 +200,16 @@
 }
 
 .panel.panel-default.micro-panel {
-  .panel-body  {
-    padding:  15px 10px 10px;
+  .panel-body {
+    padding: 15px 10px 10px;
 
     &.no-padding {
       padding: 0;
     }
   }
 
-  > header, > .panel-heading {
+  > header,
+  > .panel-heading {
     @extend %microheader;
     @extend %clearfix;
     padding: 9px 8px 6px;

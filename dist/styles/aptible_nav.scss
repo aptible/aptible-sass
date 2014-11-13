@@ -144,7 +144,8 @@ header.dashboard-header {
     }
   }
 
-  .current-user, .current-organization {
+  .current-user,
+  .current-organization {
     .gravatar {
       float: left;
     }
@@ -184,48 +185,50 @@ header.dashboard-header {
         a {
           clear: none;
         }
+      }
 
-        .org-name {
-          font-size: 13px;
-          display: block;
-          float: left;
-          padding: 8px 6px 6px;
-          font-weight: $weight-semibold;
+      .org-name {
+        font-size: 13px;
+        display: block;
+        float: left;
+        padding: 8px 6px 6px;
+        font-weight: $weight-semibold;
 
-          i.fa {
-            vertical-align: 1px;
-            &.success {
-              color: $color-bright-green;
-            }
+        i.fa {
+          vertical-align: 1px;
+          
+          &.success {
+            color: $color-bright-green;
           }
         }
+      }
 
-        a.org-name {
-          color: $color-bright-blue;
+      a.org-name {
+        color: $color-bright-blue;
+
+        &:hover {
+          background: none;
+          color: $color-dark-blue;
+        }
+      }
+
+      .sub-nav-tabs {
+        float: right;
+
+        a {
+          padding: 9px 10px 4px;
 
           &:hover {
-            background: none;
-            color: $color-dark-blue;
+            i.fa {
+              color: $color-primary;
+            }
           }
         }
 
-        .sub-nav-tabs {
-          float: right;
-
-          a {
-            padding: 9px 10px 4px;
-            &:hover {
-              i.fa {
-                color: $color-primary;
-              }
-            }
-          }
-
-          i.fa {
-            font-size: 14px;
-            margin: 0;
-            padding: 0;
-          }
+        i.fa {
+          font-size: 14px;
+          margin: 0;
+          padding: 0;
         }
       }
     }
@@ -347,8 +350,8 @@ footer.aptible-footer {
     }
   }
 
-  > li:hover a{
-    background-radius: 3px;
+  > li:hover a {
+    border-radius: 3px;
     background: $color-bg-light-gray;
   }
 
@@ -358,7 +361,8 @@ footer.aptible-footer {
   }
 }
 
-.nav.user-nav .btn-group, .btn-group.dropdown-select {
+.nav.user-nav .btn-group,
+.btn-group.dropdown-select {
   border: 1px solid transparent;
   border-radius: 3px;
   transition-duration: .3s;
@@ -429,10 +433,6 @@ footer.aptible-footer {
     i.fa {
       font-size: 10px;
     }
-  }
-
-  &.open {
-
   }
 }
 

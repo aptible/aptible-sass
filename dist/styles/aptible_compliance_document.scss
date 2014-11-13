@@ -1,7 +1,3 @@
-.compliance-meta {
-
-}
-
 .compliance-document-fact {
   .compliance-icon {
     float: left;
@@ -32,7 +28,8 @@
     margin: 15px 0;
   }
 
-  .checkbox label, .radio label {
+  .checkbox label,
+  .radio label {
     font-size: 13px;
   }
 }
@@ -49,7 +46,7 @@
   background: none;
   padding: 0;
   border: 0;
-  margin:0 0 15px;
+  margin: 0 0 15px;
 
   a {
     text-transform: none;
@@ -137,7 +134,8 @@
 }
 
 .panel.panel-default > header {
-  .compliance-label, .compliance-icon {
+  .compliance-label,
+  .compliance-icon {
     float: left;
   }
 

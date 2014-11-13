@@ -10,23 +10,24 @@ header.dashboard-header {
       > a {
         font-weight: $weight-semibold;
       }
+
+      & + li:before {
+        content: '\f054';
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        font-size: 11px;
+        vertical-align: 2px;
+        margin: 0 4px;
+      }
     }
 
     > li:nth-child(2):before {
       display: none;
     }
 
-    > li + li:before {
-      content: '\f054';
-      font-family: FontAwesome;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      font-size: 11px;
-      vertical-align: 2px;
-      margin: 0 4px;
-    }
   }
 }
 
@@ -37,7 +38,8 @@ header.dashboard-header {
     transition-duration: .5s;
     border: 1px solid transparent;
 
-    &:hover, &.open {
+    &:hover,
+    &.open {
       border: 1px solid $color-border-gray;
       box-shadow: 0 1px 3px rgba(#000, .08);
       text-decoration: none;

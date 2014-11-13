@@ -42,7 +42,7 @@ $color-compliance-danger: #e36666;
 .compliance-status-panel {
   .compliance-status {
     text-align: center;
-    padding: 30px 0px 10px;
+    padding: 30px 0 10px;
 
     &:hover {
       ul.compliance-nav {
@@ -71,10 +71,6 @@ $color-compliance-danger: #e36666;
     padding: 0;
     visibility: hidden;
 
-    > li + li {
-      margin-left: 8px;
-    }
-
     > li {
       display: inline-block;
       list-style-type: none;
@@ -84,6 +80,10 @@ $color-compliance-danger: #e36666;
         font-size: 12px;
         color: $color-light;
         font-weight: $weight-semibold;
+      }
+
+      > & + li {
+        margin-left: 8px;
       }
     }
   }
@@ -241,7 +241,8 @@ $color-compliance-danger: #e36666;
       color: $color-light;
 
       .checkbox {
-        label, input {
+        label,
+        input {
           font-size: 14px;
         }
       }
@@ -362,7 +363,8 @@ $color-compliance-danger: #e36666;
   font-size: 14px;
   padding: 20px 30px 30px;
 
-  p, blockquote {
+  p,
+  blockquote {
     font-size: 14px;
   }
 
