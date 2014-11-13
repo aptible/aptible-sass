@@ -196,7 +196,7 @@ header.dashboard-header {
 
         i.fa {
           vertical-align: 1px;
-          
+
           &.success {
             color: $color-bright-green;
           }
@@ -399,11 +399,11 @@ footer.aptible-footer {
     cursor: pointer;
     padding: 12px 5px;
   }
+}
 
-  .dropdown-menu {
-    min-width: 0;
-    width: 100%;
-  }
+.dropdown-menu {
+  min-width: 0;
+  width: 100%;
 }
 
 .btn-group.dropdown-select {
