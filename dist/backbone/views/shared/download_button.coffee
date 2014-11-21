@@ -5,7 +5,7 @@ class App.Views.DocumentDownloadButton extends Backbone.View
   initialize: ->
     @model.on 'change:s3_path', @render, @
     @model.on 'change:s3_path', @stop_listening, @
-    @model.start_listening() unless @model.get('s3_path')
+    @model.start_polling() unless @model.get('s3_path')
 
     @render()
 
@@ -20,4 +20,4 @@ class App.Views.DocumentDownloadButton extends Backbone.View
     @$el.data('download-url') || false
 
   stop_listening: ->
-    @model.stop_listening() if @model.get('s3_path')
+    @model.stop_polling() if @model.get('s3_path')
