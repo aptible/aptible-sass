@@ -10,7 +10,8 @@ class App.Views.WizardStep extends Backbone.View
 
   render: ->
     @$el.html(@template()(@render_params()))
-    @submit_btn = @$('button[type="submit"]').on 'click', @on_submit
+    @submit_btn = @$('button[type="submit"]')
+    @listenTo @submit_btn, 'click', @on_submit
     @alert = @$('.alert').hide()
     @error_msg = @$('.error-message')
     @after_render()

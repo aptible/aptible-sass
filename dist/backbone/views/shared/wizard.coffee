@@ -8,11 +8,13 @@ class App.Views.Wizard extends Backbone.View
     'click .nav li a': 'on_tab_click'
 
   tab_container_class: '.tab-content'
-  bind_to: ['render', 'add_step_view', 'on_wizard_complete', 'on_next', 'on_cancel', 'on_open', 'on_previous', 'on_save_success']
+  default_binds: ['render', 'add_step_view', 'on_wizard_complete', 'on_next', 'on_cancel', 'on_open', 'on_previous', 'on_save_success', 'close']
+  bind_to: []
   current_index: 0
 
   initialize: ->
-    _.each @bind_to, (binding) =>
+    bindings = _.union(@default_binds, @bind_to)
+    _.each bindings, (binding) =>
       _.bindAll @, binding
 
     @config = @initialize_config()
@@ -36,6 +38,7 @@ class App.Views.Wizard extends Backbone.View
     @container = @$(@tab_container_class)
 
     _.each @steps, @add_step_view
+
     @
 
   render_params: ->
@@ -48,12 +51,11 @@ class App.Views.Wizard extends Backbone.View
     @container.append step.render().$el
     step.$el.data('index', index)
 
-    step.on 'exit', () =>
+    @listenTo step, 'exit', () =>
       @complete_step index
       @current_index = ++index
       @go_to_step @current_index
-
-    step.on 'complete', @on_wizard_complete
+    @listenTo step, 'complete', @on_wizard_complete
 
   complete_step: (step_index) ->
     tab = @$('.nav li').eq(step_index).addClass('completed')
@@ -137,3 +139,10 @@ class App.Views.Wizard extends Backbone.View
   on_tab_click: (e) ->
     tab_index = $(e.target).data('index')
     @index(tab_index)
+
+  on_close: ->
+    $(document).off 'page:change', @close
+    _.each @steps, @close_child_view
+
+  close_child_view: (view)->
+    view.close()

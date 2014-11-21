@@ -7,8 +7,12 @@
 }
 
 .panel-group {
-  .panel + .panel {
-    margin-top: 10px;
+  .panel {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
