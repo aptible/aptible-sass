@@ -42,7 +42,7 @@ $color-compliance-danger: #e36666;
 .compliance-status-panel {
   .compliance-status {
     text-align: center;
-    padding: 30px 0 10px;
+    padding: 20px 0 10px;
 
     &:hover {
       ul.compliance-nav {
@@ -82,8 +82,8 @@ $color-compliance-danger: #e36666;
         font-weight: $weight-semibold;
       }
 
-      > & + li {
-        margin-left: 8px;
+      & + li {
+        margin-left: 12px;
       }
     }
   }
@@ -422,6 +422,11 @@ $color-compliance-danger: #e36666;
 
 .activities {
   .activity-item {
+    .activity-item-label {
+      float: left;
+      margin-top: 3px;
+    }
+
     a {
       font-weight: $weight-semibold;
     }
