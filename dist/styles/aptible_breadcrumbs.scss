@@ -44,6 +44,10 @@ header.dashboard-header {
       box-shadow: 0 1px 3px rgba(#000, .08);
       text-decoration: none;
     }
+    
+    .dropdown-menu {
+      min-width: 125px;
+    }
 
     .dropdown-toggle {
       &:hover {
