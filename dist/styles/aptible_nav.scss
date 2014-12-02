@@ -17,6 +17,14 @@ header.navbar.primary-nav-header {
   border-bottom: 1px solid $color-border-gray;
   margin-bottom: 20px;
 
+  .navbar-header {
+    float: left;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
   .navbar-brand {
     text-indent: -9999em;
     width: 141px;
