@@ -1,7 +1,9 @@
 - if current_user.decorate.cached_organizations.count > 1
   %li.dropdown.current-organization
     .btn-group
-      %a.btn.btn-link{ href: organization_url(current_organization.id) }= current_organization.name
+      %a.btn.btn-link{ href: organization_url(current_organization.id), title: "Edit #{current_organization.name} settings", data: { toggle: 'tooltip', placement: 'bottom' } }
+        = current_organization.name
+        %i.fa.fa-cog
       %a.btn.dropdown-toggle{ data: { toggle: 'dropdown' } }
         %i.fa.fa-chevron-down
       %ul.dropdown-menu
@@ -23,5 +25,6 @@
 
 - elsif current_organization
   %li
-    %a{ href: organization_url(current_organization.id) }
+    %a{ href: organization_url(current_organization.id), title: "Edit #{current_organization.name} settings", data: { toggle: 'tooltip', placement: 'bottom' } }
+      %i.fa.fa-cog
       = current_organization.name
