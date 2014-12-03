@@ -1,18 +1,19 @@
 .edit-compliance-document-contact
   .panel.panel-default.micro-panel.compliance-document-contact
     %header
-      %h5 Approving Authority
-      %a.edit-contacts-link.edit-approving-authority Edit
+      %h5= @inputName
+      %a.edit-contacts-link.begin-edit-contact Edit
     .panel-body.contact
       .gravatar.sm
-        %img.contact-gravatar{ src: @helpers.gravatar_url(@model.get('approving_authority_email'), 48) }
+        - if @contactEmail
+          %img.contact-gravatar{ src: @helpers.gravatar_url(@contactEmail, 48) }
       .contact-info
-        .contact-name= @model.get('approving_authority_name')
-        .contact-email= @model.get('approving_authority_title')
+        .contact-name= @contactName
+        .contact-email= @contactTitle
 
   .edit-contact-panel.panel.panel-default.micro-panel
     %header
-      %h5 Approving Authority
+      %h5= @inputName
       %a.edit-contacts-link.finish.btn.btn-xs.btn-primary Ok
     .panel-body.contact
       .alert.alert-danger
@@ -20,7 +21,7 @@
         %span.error-message
       .btn-group.dropdown-select
         %a.btn.dropdown-toggle{ data: { toggle: 'dropdown' } }
-          %span.contact-name= @model.get('approving_authority_name')
+          %span.contact-name= @contactName
           %i.fa.fa-chevron-down
 
         %ul.dropdown-menu
@@ -28,4 +29,4 @@
             %li
               %a.select-user{ data: {  user_id: user.get('id') }}= user.get('name')
 
-      %input.form-control{ placeholder: 'Approving Authority Title', name: 'approving_authority_title', value: @model.get('approving_authority_title') }
+      %input.form-control.contact-title{ placeholder: "#{@inputName} Title", value: @contactTitle }
