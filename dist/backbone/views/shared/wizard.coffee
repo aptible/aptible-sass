@@ -8,7 +8,7 @@ class App.Views.Wizard extends Backbone.View
     'click .nav li a': 'on_tab_click'
 
   tab_container_class: '.tab-content'
-  default_binds: ['render', 'add_step_view', 'on_wizard_complete', 'on_next', 'on_cancel', 'on_open', 'on_previous', 'on_save_success', 'close']
+  default_binds: ['render', 'add_step_view', 'on_wizard_complete', 'on_next', 'on_cancel', 'on_open', 'on_previous', 'on_save_success', 'close', 'resize']
   bind_to: []
   current_index: 0
 
@@ -26,6 +26,12 @@ class App.Views.Wizard extends Backbone.View
     @render()
     @tabs = @$('.nav li')
     @load_first_step()
+
+    $(window).on('resize', @resize).resize()
+
+  resize: ->
+    height = $(window).height() - 200
+    @$('.tab-content .tab-pane').css({ maxHeight: height })
 
   initialize_config: ->
     {}
@@ -142,6 +148,7 @@ class App.Views.Wizard extends Backbone.View
 
   on_close: ->
     $(document).off 'page:change', @close
+    $(window).off 'resize', @resize
     _.each @steps, @close_child_view
 
   close_child_view: (view)->
