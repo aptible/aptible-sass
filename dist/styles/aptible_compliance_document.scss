@@ -11,8 +11,22 @@
   }
 
   .fact-value {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: $weight-semibold;
+
+    &.progress-fact {
+      .progress-value {
+        float: left;
+        font-size: 12px;
+        font-weight: $weight-normal;
+        letter-spacing: -.7px;
+      }
+
+      .progress {
+        float: left;
+        width: 100px;
+      }
+    }
   }
 }
 

@@ -1,9 +1,8 @@
 .form-control {
   font-size: 16px;
-  border-color: #d9d9d9;
+  border-color: #ccc;
   height: 40px;
-  box-shadow: none;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .form-group {
@@ -24,7 +23,7 @@
 }
 
 label {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 10px;
 
   &.block {

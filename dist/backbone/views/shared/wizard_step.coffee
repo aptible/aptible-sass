@@ -40,6 +40,8 @@ class App.Views.WizardStep extends Backbone.View
       @model.set key, val
 
   on_submit: ->
+    @alert.removeClass('fadeInLeft').hide()
+
     if @model.isValid()
       @model.save(@model.attributes, @submit_params())
     else
