@@ -195,3 +195,8 @@ a:not([href]) {
     font-weight: $weight-lighter;
   }
 }
+
+.progress-bar {
+  box-shadow: none;
+  background-color: $color-bright-blue;
+}
