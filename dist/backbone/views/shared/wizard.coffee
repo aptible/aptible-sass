@@ -8,7 +8,7 @@ class App.Views.Wizard extends Backbone.View
     'click .nav li a': 'on_tab_click'
 
   tab_container_class: '.tab-content'
-  default_binds: ['render', 'add_step_view', 'on_wizard_complete', 'on_next', 'on_cancel', 'on_open', 'on_previous', 'on_save_success', 'close', 'resize']
+  default_binds: ['render', 'add_step_view', 'on_next', 'on_cancel', 'on_open', 'on_previous', 'on_save_success', 'close', 'resize']
   bind_to: []
   current_index: 0
 
@@ -25,7 +25,7 @@ class App.Views.Wizard extends Backbone.View
 
     @render()
     @tabs = @$('.nav li')
-    @load_first_step()
+    #@load_first_step()
 
     $(window).on('resize', @resize).resize()
 
@@ -48,7 +48,7 @@ class App.Views.Wizard extends Backbone.View
     @
 
   render_params: ->
-    { steps: @steps }
+    steps: @steps
 
   load_first_step: ->
     @go_to_step @current_index
@@ -57,15 +57,6 @@ class App.Views.Wizard extends Backbone.View
     @container.append step.render().$el
     step.$el.data('index', index)
 
-    @listenTo step, 'exit', () =>
-      @complete_step index
-      @current_index = ++index
-      @go_to_step @current_index
-    @listenTo step, 'complete', @on_wizard_complete
-
-  complete_step: (step_index) ->
-    tab = @$('.nav li').eq(step_index).addClass('completed')
-
   go_to_step: (step_index) ->
     if @steps[step_index]
       @tabs.removeClass('disabled')
@@ -73,22 +64,6 @@ class App.Views.Wizard extends Backbone.View
       @tabs.eq(step_index).nextAll().addClass('disabled')
 
       @steps[step_index].on_enter()
-
-  on_wizard_complete: ->
-    @$el
-      .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', (=>
-        document.location.href = document.location.href
-      ))
-      .addClass('animated fadeOutLeft')
-
-  on_tab_click: (e)->
-    tab = $(e.target)
-    @current_index = parseInt(tab.data('index'), 10)
-
-    return unless typeof tab.data('index') isnt 'undefined' and tab.attr('href')
-
-    content = $(tab.attr('href')).show()
-    @go_to_step @current_index
 
   ################
 

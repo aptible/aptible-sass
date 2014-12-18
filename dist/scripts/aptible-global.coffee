@@ -37,5 +37,5 @@ window.AptibleSassScripts =
           else
             return # TODO: throw an error and log if the switch falls through
 
-$(document).ready AptibleSassScripts.initialize
+$(document).on('page:change', AptibleSassScripts.initialize)
 $(window).resize AptibleSassScripts.adjustContentHeight

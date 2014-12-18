@@ -441,6 +441,14 @@ $color-compliance-danger: #e36666;
       margin-top: 3px;
     }
 
+    .activity-item-body {
+      @extend %aptible-panel;
+      font-size: 14px;
+      margin: 5px 0;
+      width: 450px;
+      padding: 7px 10px 6px;
+    }
+
     .time {
       color: $color-light;
       font-size: 12px;
