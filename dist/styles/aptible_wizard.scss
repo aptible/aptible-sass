@@ -13,7 +13,10 @@
     float: left;
 
     > span,
-    > a {
+    > a,
+    > a:link,
+    > a:active,
+    > a:visited, {
       font-size: 16px;
       font-weight: $weight-semibold;
       color: $color-light;
@@ -113,7 +116,7 @@
     margin-bottom: 30px;
   }
 
-  textarea.form-control {
+  .form-control {
     font-size: 14px;
   }
 
