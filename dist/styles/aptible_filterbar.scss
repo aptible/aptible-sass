@@ -11,7 +11,7 @@
         vertical-align: -2px;
       }
 
-      .btn {
+      .btn.btn-subdued {
         border: 1px solid #cdcdcd;
         @include linear-gradient(#fff, #eaeaea);
         box-shadow: 0 1px 1px 0 rgba(#000, .06);
