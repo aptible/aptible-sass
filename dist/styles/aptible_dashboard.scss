@@ -5,6 +5,16 @@
 @import 'aptible_wizard';
 @import 'aptible_filterbar';
 
+.success {
+  color: #20BB3A;
+  font-weight: $weight-semibold;
+}
+
+.danger {
+  color: #FF6868;
+  font-weight: $weight-semibold;
+}
+
 .sub-nav-tabs {
   .button-label {
     display: none;
