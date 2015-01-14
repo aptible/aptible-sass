@@ -351,3 +351,17 @@
     }
   }
 }
+
+.panel-link:hover {
+  text-decoration: none;
+
+  .panel.panel-default {
+    border-color: $color-bright-blue;
+    box-shadow: 0 0 4px rgba($color-bright-blue, 0.3);
+
+    .panel-heading,
+    .panel-body-section {
+      text-decoration: none;
+    }
+  }
+}
