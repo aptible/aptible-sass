@@ -7,7 +7,7 @@
         .row
           .col-xs-3
             %ul.nav
-              %li.title My Aptible
+              %li.title Tools
               %li
                 %a{ href: dashboard_apps_url } Apps
               %li
@@ -15,24 +15,23 @@
               %li
                 %a{ href: compliance_url } Compliance
               %li
-                %a{ href: organizations_url } My Organizations
+                %a{ href: organizations_url } Organizations
 
           .col-xs-3
             %ul.nav
               %li.title Support
-              %li
-                %a{ href: contact_support_url } Contact Us
-              %li
-                %a{ href: support_url } Support
-              %li
-                %a{ href: responsible_disclosure_url } Responsible Disclosure
               %li.current-status
                 %a.current-status-link{ href: status_url }
                   Status
                   %i.current-status-indicator
-
+              %li
+                %a{ href: support_url } Support
               %li
                 %a{ href: legal_url } Legal
+              %li
+                %a{ href: responsible_disclosure_url } Responsible Disclosure
+              %li
+                %a{ href: contact_support_url } Contact Us
 
           .col-xs-6
             %ul.nav
