@@ -4,7 +4,6 @@ class App.Views.ContactEdit extends Backbone.View
     JST['dist/templates/edit_contact']
 
   events:
-    'click .finish'             : 'onEditFinish'
     'click .select-user'        : 'onSelectUser'
     'click .begin-edit-contact' : 'onEditStart'
     'keyup .contact-title'      : 'onTitleUpdate'
@@ -20,50 +19,52 @@ class App.Views.ContactEdit extends Backbone.View
     { @idParam, @titleParam, @emailParam, @nameParam, @inputName } = _.defaults options, @defaults
     @contacts = App.current_organization_users
 
+    if @contacts.length is 1
+      contact = @contacts.at(0)
+      @model.set @idParam, contact.get('id')
+      @model.set @nameParam, contact.get('name')
+      @model.set @emailParam, contact.get('email')
+
   render: ->
-    @setupState()
     @$el.html(@template()(@renderParams()))
     @$alert = @$('.alert').hide()
     @$errorMessage = @$('.error-message')
     @onEditStart()
-    @
 
-  setupState: ->
-    @state = new Backbone.Model(
-      @model.pick(@idParam, @titleParam, @emailParam, @nameParam)
-    )
-    @state.on "change:#{@nameParam}", @onNameChange, @
-    @state.on "change:#{@titleParam}", @onTitleChange, @
-    @state.on "change:#{@emailParam}", @onEmailChange, @
+    @model.on "change:#{@nameParam}", @onNameChange, @
+    @model.on "change:#{@titleParam}", @onTitleChange, @
+    @model.on "change:#{@emailParam}", @onEmailChange, @
+
+    @
 
   renderParams: ->
     {
       helpers: App.Helpers
       contacts: @contacts
-      contactName: @state.get(@nameParam)
-      contactTitle: @state.get(@titleParam)
-      contactEmail: @state.get(@emailParam)
-      contactId: @state.get(@idParam)
+      contactName: @model.get(@nameParam)
+      contactTitle: @model.get(@titleParam)
+      contactEmail: @model.get(@emailParam)
+      contactId: @model.get(@idParam)
       inputName: @inputName
     }
 
   onNameChange: ->
-    @$('.contact-name').text @state.get(@nameParam)
+    @$('.contact-name').text @model.get(@nameParam)
 
   onTitleChange: ->
-    @$('.contact-email').text @state.get(@titleParam)
+    @$('.contact-email').text @model.get(@titleParam)
 
   onEmailChange: ->
-    src = App.Helpers.gravatar_url @state.get(@emailParam), 48
+    src = App.Helpers.gravatar_url @model.get(@emailParam), 48
     @$('.contact-gravatar').attr 'src', src
 
   onEditStart: ->
     @$el.addClass('editing')
     titleValue = $.trim @$('input.contact-title').val()
-    @state.set @titleParam, titleValue
+    @model.set @titleParam, titleValue
 
   onEditFinish: ->
-    if @state.get(@titleParam) and @state.get(@nameParam)
+    if @model.get(@titleParam) and @model.get(@nameParam)
       @confirmChanges()
     else
       @showError 'Title is required'
@@ -71,18 +72,17 @@ class App.Views.ContactEdit extends Backbone.View
   onSelectUser: (event) =>
     uid = $(event.target).data('user-id')
     contact = @contacts.get(uid)
-    @state.set @idParam, uid
-    @state.set @nameParam, contact.get('name')
-    @state.set @emailParam, contact.get('email')
+    @model.set @idParam, uid
+    @model.set @nameParam, contact.get('name')
+    @model.set @emailParam, contact.get('email')
 
   confirmChanges: ->
-    @model.set @state.attributes
     @$el.removeClass 'editing'
     @$alert.hide().removeClass 'animated fadeInLeft'
 
   onTitleUpdate: (event) =>
     val = $.trim $(event.target).val()
-    @state.set @titleParam, val
+    @model.set @titleParam, val
 
   showError: (message) ->
     @$errorMessage.text message
