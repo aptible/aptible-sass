@@ -1,5 +1,5 @@
 .form-control {
-  font-size: 16px;
+  font-size: 14px;
   border-color: #ccc;
   height: 40px;
   border-radius: 4px;
@@ -20,6 +20,14 @@
     width: 15px;
     text-align: center;
   }
+}
+
+select.form-control {
+  border: 1px solid #cdcdcd;
+  @include linear-gradient(#fff, #eaeaea);
+  box-shadow: 0 1px 1px 0 rgba(#000, .06);
+  color: $color-primary;
+  font-weight: $weight-semibold;
 }
 
 label {

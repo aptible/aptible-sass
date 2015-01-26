@@ -125,14 +125,14 @@
 
   > header,
   > .panel-heading {
-    padding: 10px 20px;
+    padding: 9px 20px;
     border-bottom: 1px solid $color-border-gray;
     box-shadow: 0 1px 3px rgba(#000, .08);
     background: #fff;
 
     h5,
     h3 {
-      margin: 6px 0 5px;
+      margin: 1px 0 0;
       font-size: 14px;
       font-weight: $weight-semibold;
     }
@@ -170,6 +170,10 @@
         }
       }
     }
+  }
+
+  .panel-body {
+    padding: 20px;
   }
 
   .panel-sub-heading {
@@ -362,6 +366,26 @@
     .panel-heading,
     .panel-body-section {
       text-decoration: none;
+    }
+  }
+}
+
+.panel .panel-heading.with-actions {
+  h3 {
+    float: left;
+  }
+
+  .panel-heading-actions {
+    float: right;
+    margin: 1px -10px 0 0;
+
+    .btn {
+      margin-left: 5px;
+    }
+
+    .label {
+      margin-top: 3px;
+      display: inline-block;
     }
   }
 }

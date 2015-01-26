@@ -71,6 +71,15 @@ i.fa {
   font-weight: $weight-semibold;
 }
 
+.label.label-default {
+  background: #f0f0f0;
+  color: $color-primary;
+  font-size: 12px;
+  font-weight: $weight-semibold;
+  padding: 6px 4px 4px;
+  text-transform: uppercase;
+}
+
 .busy-page-indicator {
   text-align: center;
 

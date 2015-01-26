@@ -33,7 +33,7 @@ a.btn {
   }
 
   &.btn-xs {
-    padding: 4px 8px;
+    padding: 5px 8px 3px;
     height: auto;
   }
 
@@ -44,9 +44,8 @@ a.btn {
 }
 
 .btn {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.3;
-  height: 34px;
   border: 0;
   border-radius: 3px;
   font-weight: $weight-semibold;
@@ -106,9 +105,6 @@ a.btn {
     @include linear-gradient(#fff, #eaeaea);
     box-shadow: 0 1px 1px 0 rgba(#000, .06);
     color: $color-primary;
-    font-size: 12px;
-    padding:6px 7px 4px;
-    height: auto;
 
     &.active {
       box-shadow: inset 0 0 8px rgba(black, 0.15);
