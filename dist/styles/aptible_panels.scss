@@ -17,12 +17,13 @@
 }
 
 .panel {
+  @extend %aptible-panel;
   margin: 0 0 20px;
+  background: $color-bg-light-gray;
 
-  .panel-body {
-    table.table:last-child {
-      margin-bottom: 0;
-    }
+  &.panel-focused {
+    border: 1px solid $color-bright-blue;
+    @include box-shadow(0 0 8px rgba($color-bright-blue, .5));
   }
 
   .panel-col {
@@ -40,34 +41,6 @@
     }
   }
 
-  &.panel-default {
-    @extend %aptible-panel;
-
-    &.focus-panel {
-      .panel-body {
-        padding: 50px;
-      }
-    }
-
-    .panel-body-subdued {
-      background: $color-bg-gray;
-      padding: 25px;
-    }
-
-    &.focus-panel-sm {
-      .panel-body {
-        padding: 20px;
-      }
-
-      .panel-title {
-        text-align: center;
-        font-size: 16px;
-        font-weight: 500;
-        text-align: center;
-      }
-    }
-  }
-
   > .panel-body-item:last-child {
     border: 0;
   }
@@ -77,51 +50,10 @@
     padding: 20px;
   }
 
-  > header,
-  .panel-heading {
-    @extend %clearfix;
-    background: $color-bg-light-gray;
-    padding: 8px 20px;
-    border-radius: 3px 3px 0 0;
-
-    h4,
-    h3 {
-      font-size: 16px;
-      margin: 0;
-      padding: 0;
-      height: 30px;
-      line-height: 30px;
-      float: left;
-
-      .label,
-      .badge {
-        margin: 0 0 0 10px;
-        vertical-align: 2px;
-      }
-
-      .badge {
-        margin: 0 0 0 2px;
-      }
-    }
-
-    ul.nav-pills {
-      float: right;
-
-      > li > a {
-        padding: 6px 8px;
-        font-weight: $weight-semibold;
-      }
-    }
+  .panel-heading-link {
+    float: right;
+    margin: 10px 0 0 0;
   }
-
-  &.table-panel {
-    border-color: $color-border-dark-gray;
-  }
-}
-
-.panel.panel-default.panel-subdued,
-.panel.panel-default.table-panel {
-  background: $color-bg-light-gray;
 
   > header,
   > .panel-heading {
@@ -130,10 +62,15 @@
     box-shadow: 0 1px 3px rgba(#000, .08);
     background: #fff;
 
-    h5,
-    h3 {
+    h5 {
       margin: 1px 0 0;
       font-size: 14px;
+      font-weight: $weight-semibold;
+    }
+
+    h3 {
+      margin: 10px 0;
+      font-size: 16px;
       font-weight: $weight-semibold;
     }
 
@@ -150,10 +87,6 @@
       i.fa {
         margin: 0;
       }
-    }
-
-    h3 {
-      font-size: 16px;
     }
 
     .nav-pills {
@@ -238,6 +171,7 @@
     }
   }
 }
+
 
 .panel.panel-default.table-panel {
   > header, > .panel-heading {
@@ -371,6 +305,8 @@
 }
 
 .panel .panel-heading.with-actions {
+  @extend %clearfix;
+
   h3 {
     float: left;
   }
