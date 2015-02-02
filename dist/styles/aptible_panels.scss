@@ -26,6 +26,15 @@
     @include box-shadow(0 0 8px rgba($color-bright-blue, .5));
   }
 
+  &.panel-danger {
+    border: 1px solid #f00;
+    @include box-shadow(0 0 8px rgba(#f00, .5));
+
+    > .panel-heading h3 {
+      color: #d63535;
+    }
+  }
+
   .panel-col {
     float: left;
     width: 25%;
