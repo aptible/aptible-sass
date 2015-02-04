@@ -52,7 +52,7 @@ class App.Views.ContactEdit extends Backbone.View
     @$('.contact-name').text @model.get(@nameParam)
 
   onTitleChange: ->
-    @$('.contact-email').text @model.get(@titleParam)
+    @$('.contact-title').val(@model.get(@titleParam)).attr('placeholder', "#{@model.get(@nameParam)}'s Title")
 
   onEmailChange: ->
     src = App.Helpers.gravatar_url @model.get(@emailParam), 48
@@ -61,7 +61,7 @@ class App.Views.ContactEdit extends Backbone.View
   onEditStart: ->
     @$el.addClass('editing')
     titleValue = $.trim @$('input.contact-title').val()
-    @model.set @titleParam, titleValue
+    @model.set(@titleParam, titleValue) if titleValue
 
   onEditFinish: ->
     if @model.get(@titleParam) and @model.get(@nameParam)
@@ -72,9 +72,11 @@ class App.Views.ContactEdit extends Backbone.View
   onSelectUser: (event) =>
     uid = $(event.target).data('user-id')
     contact = @contacts.get(uid)
-    @model.set @idParam, uid
+
     @model.set @nameParam, contact.get('name')
     @model.set @emailParam, contact.get('email')
+    @model.set(@titleParam, '') unless @model.get(@idParam) is uid
+    @model.set @idParam, uid
 
   confirmChanges: ->
     @$el.removeClass 'editing'
