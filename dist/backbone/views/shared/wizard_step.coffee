@@ -57,7 +57,7 @@ class App.Views.WizardStep extends Backbone.View
       message = 'Something went wrong'
 
     @error_msg.text(message)
-    @alert.show().addClass('animated fadeInLeft')
+    @alert.show()
 
   exit: ->
     @$el

@@ -63,12 +63,6 @@ class App.Views.ContactEdit extends Backbone.View
     titleValue = $.trim @$('input.contact-title').val()
     @model.set(@titleParam, titleValue) if titleValue
 
-  onEditFinish: ->
-    if @model.get(@titleParam) and @model.get(@nameParam)
-      @confirmChanges()
-    else
-      @showError 'Title is required'
-
   onSelectUser: (event) =>
     uid = $(event.target).data('user-id')
     contact = @contacts.get(uid)
@@ -78,14 +72,6 @@ class App.Views.ContactEdit extends Backbone.View
     @model.set(@titleParam, '') unless @model.get(@idParam) is uid
     @model.set @idParam, uid
 
-  confirmChanges: ->
-    @$el.removeClass 'editing'
-    @$alert.hide().removeClass 'animated fadeInLeft'
-
   onTitleUpdate: (event) =>
     val = $.trim $(event.target).val()
     @model.set @titleParam, val
-
-  showError: (message) ->
-    @$errorMessage.text message
-    @$alert.show().addClass('animated fadeInLeft')

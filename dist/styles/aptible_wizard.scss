@@ -113,7 +113,7 @@
   }
 
   .form-group {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 
   .form-control {
@@ -126,6 +126,17 @@
       font-size: 14px;
       display: block;
       margin: 0;
+    }
+  }
+
+  .wizard-footer-actions {
+    a.btn {
+      display: inline-block;
+      margin: 0 10px 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
     }
   }
 }

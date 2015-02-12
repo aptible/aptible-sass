@@ -1,0 +1,13 @@
+.attachment-item
+  .attachment-image-container
+    - if @is_image
+      %a.attachment-image{ href: @url, target: '_blank' }
+        %img{ src: @preview_url || @thumbnail_url }
+    - else
+      %a.attachment-text{ href: @url, target: '_blank' }
+        %i.fa.fa-search-plus
+
+  .attachment-image-info
+    .attachment-file_name= @file_name
+    .attachment-created_at Added less than a minute ago
+    %a.delete-attachment{ data: { attachment_id: @id }} Delete
