@@ -16,6 +16,7 @@ header.navbar.primary-nav-header {
   background: $color-bg-gray;
   border-bottom: 1px solid $color-border-gray;
   margin-bottom: 20px;
+  min-width: 980px;
 
   .navbar-header {
     float: left;
@@ -291,6 +292,7 @@ footer.aptible-footer {
   border-top: 1px solid $color-border-gray;
   padding: 50px 0;
   margin: 50px 0 0;
+  min-width: 980px;
 
   .aptible-mark {
     position: absolute;
