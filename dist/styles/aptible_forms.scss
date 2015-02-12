@@ -1,4 +1,4 @@
-.form-control {
+ .form-control {
   font-size: 16px;
   border-color: #ccc;
   height: 40px;
@@ -75,4 +75,42 @@ label {
 input[type="radio"],
 input[type="checkbox"] {
   margin-top: 2px;
+}
+
+.radio-group {
+  margin: 0 0 30px;
+
+  label.description {
+    font-weight: $weight-normal;
+    color: $color-subdued;
+  }
+
+  .radio.inline {
+    @extend %clearfix;
+    margin-top: 0;
+
+    label {
+      display: block;
+      float: left;
+      color: $color-subdued;
+      margin-right: 20px;
+    }
+  }
+}
+
+label.sub {
+  font-weight: $weight-normal;
+  color: $color-subdued;
+}
+
+label.required {
+  display: block;
+
+  &:after {
+    content: '*';
+    font-weight: $weight-bold;
+    color: #ff6868;
+    display: inline-block;
+    margin: 0 0 0 5px;
+  }
 }

@@ -288,14 +288,6 @@ $color-compliance-danger: #e36666;
     }
   }
 
-  label.required:after {
-    content: '*';
-    font-weight: $weight-bold;
-    color: #ff6868;
-    display: inline-block;
-    margin: 0 0 0 5px;
-  }
-
   .field-value {
     color: $color-light;
     font-weight: $weight-semibold;

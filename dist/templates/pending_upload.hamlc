@@ -1,0 +1,5 @@
+.upload-item
+  .indicator
+    %i.fa.fa-spin.fa-spinner
+    Uploading
+  .upload-item-name= @file.name
