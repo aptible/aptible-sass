@@ -39,56 +39,6 @@ $color-compliance-danger: #e36666;
   }
 }
 
-.compliance-status-panel {
-  .compliance-status {
-    text-align: center;
-    padding: 20px 0 10px;
-
-    &:hover {
-      ul.compliance-nav {
-        visibility: visible;
-      }
-    }
-  }
-
-  .compliance-document {
-    font-size: 14px;
-    font-weight: $weight-semibold;
-  }
-
-  .compliance-effective {
-    font-size: 12px;
-    color: $color-light;
-  }
-
-  .compliance-icon {
-    margin-bottom: 5px;
-  }
-
-  ul.compliance-nav {
-    text-align: center;
-    margin: 5px 0;
-    padding: 0;
-    visibility: hidden;
-
-    > li {
-      display: inline-block;
-      list-style-type: none;
-      float: none;
-
-      a {
-        font-size: 12px;
-        color: $color-light;
-        font-weight: $weight-semibold;
-      }
-
-      & + li {
-        margin-left: 12px;
-      }
-    }
-  }
-}
-
 .compliance-dashboard-list {
   margin-top: 10px;
 }
