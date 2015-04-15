@@ -4,7 +4,7 @@
       %a.navbar-brand{ href: dashboard_url } Aptible
     %nav
       %ul.nav.nav-pills.navbar-right.user-nav
-        = render partial: '../../vendor/assets/aptible-sass/dist/layouts/org_nav'
+        = render partial: '../../vendor/assets/aptible-sass/dist/layouts/org_nav', locals: { compliance_page: true }
         = render partial: '../../vendor/assets/aptible-sass/dist/layouts/user_nav'
 
       %ul.nav.nav-pills.navbar-right.primary-nav
