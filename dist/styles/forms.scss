@@ -1,0 +1,93 @@
+.form-control {
+  font-size: 14px;
+  border-color: #ccc;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-group-addon {
+  background-color: $color-bg-gray;
+  border-color: $color-border-gray;
+
+  .fa,
+  .glyphicon {
+    color: $color-subdued;
+    margin: 0 2px;
+    width: 15px;
+    text-align: center;
+  }
+}
+
+select.form-control {
+  border: 1px solid #cdcdcd;
+  @include linear-gradient(#fff, #eaeaea);
+  box-shadow: 0 1px 1px 0 rgba(#000, .06);
+  color: $color-primary;
+  font-weight: $weight-semibold;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 10px;
+
+  &.block {
+    display: block;
+  }
+
+  .subdued {
+    font-size: 13px;
+    font-weight: $weight-normal;
+    color: $color-subdued;
+  }
+
+  .label-helper {
+    color: $color-light;
+    font-size: 12px;
+    float: right;
+    margin-top: 2px;
+    font-weight: $weight-lighter;
+  }
+
+  .label-helper-link {
+    font-size: 12px;
+    font-weight: $weight-lighter;
+    display: inline-block;
+    margin: 0 0 0 8px;
+  }
+}
+
+.form-container {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #CCCCCC;
+  box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.07);
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    > li {
+      border-bottom: 1px solid #f0f0f0;
+      height: 32px;
+      padding: 4px 10px;
+
+      &:last-child {
+        border: 0;
+      }
+    }
+
+    label {
+      font-weight: normal;
+      margin: 1px 0 0;
+    }
+
+    input {
+      margin: 6px 7px 0 0;
+    }
+  }
+}

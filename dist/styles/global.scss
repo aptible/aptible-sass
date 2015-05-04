@@ -1,0 +1,10 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 13px;
+  text-rendering: optimizeLegibility;
+  @include heading-font-family;
+}
