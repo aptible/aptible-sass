@@ -29,7 +29,7 @@ a.btn {
   padding: 8px 12px 6px;
 
   &.btn-sm {
-    padding: 6px 8px;
+    padding: 5px 8px;
   }
 
   &.btn-xs {
@@ -60,7 +60,7 @@ a.btn {
 
   &.btn-sm {
     font-size: 14px;
-    height: 29px;
+    height: 32px;
   }
 
   &.btn-xs {
@@ -104,6 +104,8 @@ a.btn {
     color: $color-primary;
 
     &:hover {
+      color: $color-primary;
+      @include linear-gradient(#fff, #eaeaea);
       box-shadow: 0 1px 4px rgba(#000, 0.18);
       border-color: #bbb;
     }

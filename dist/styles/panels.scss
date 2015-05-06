@@ -1,6 +1,5 @@
 .panel {
   border-radius: 3px;
-  background: #fff;
   background: $color-bg-gray;
   border: 1px solid #e5e5e5;
   -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
@@ -17,14 +16,20 @@
     box-shadow: 0 0 8px rgba(#f00, .5);
   }
 
+  &.white-panel {
+    background: #fff;
+  }
+
   > .panel-heading {
+    @extend %clearfix;
+
     padding: 9px 20px;
     border-bottom: 1px solid #e5e5e5;
     box-shadow: 0 1px 3px rgba(#000, .08);
     background: #fff;
 
     h5 {
-      margin: 1px 0 0;
+      margin: 5px 0;
       font-size: 14px;
       font-weight: $weight-semibold;
     }
@@ -34,6 +39,18 @@
       font-size: 16px;
       font-weight: $weight-semibold;
     }
+
+    &.with-nav {
+      h3 {
+        margin-top: 11px;
+        float: left;
+      }
+    }
+
+    .nav-pills {
+      float: right;
+      margin-top: 3px;
+    }
   }
 
   .panel-section {
@@ -42,6 +59,51 @@
 
     &:last-child {
       border: 0;
+    }
+  }
+
+  .panel-sub-heading {
+    background: #fff;
+    padding: 20px 20px 15px;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(#000, .08);
+  }
+
+  .panel-tabs {
+    .nav.nav-tabs {
+      border-bottom: 1px solid $color-border-gray;
+
+      > li {
+        margin: 0;
+
+        &.active {
+          a {
+            background: none;
+            color: $color-primary;
+
+            &:hover {
+              background: none;
+            }
+          }
+        }
+
+        a {
+          color: $color-light;
+          font-size: 13px;
+          height: 58px;
+          padding: 20px;
+          border: 0;
+          margin: 0;
+          border-radius: 0;
+          font-weight: $weight-semibold;
+          border-right: 1px solid $color-border-gray;
+
+          &:hover {
+            background: rgba(#000, .03);
+          }
+        }
+      }
+
     }
   }
 }
@@ -73,5 +135,30 @@ a.panel-link .panel, a.panel {
     border: 1px solid $color-bright-blue;
     box-shadow: 0 0 5px rgba($color-bright-blue, 0.25);
     transition-duration: .5s;
+  }
+}
+
+
+.panel-heading {
+  .nav.nav-pills {
+    > li {
+      margin-right: 10px;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  .compliance-icon {
+    float: left;
+
+    .icon-xs {
+      margin-top: 2px;
+    }
+  }
+
+  .compliance-label {
+    margin-left: 20px;
   }
 }

@@ -81,8 +81,8 @@
   text-transform: uppercase;
   color: $color-light;
   font-weight: $weight-semibold;
-  border: 1px solid $color-border-gray;
+  border: 1px solid #e5e5e5;
   border-width: 1px 0;
   padding: 8px 8px 5px;
-  @include linear-gradient($color-bg-gray, #e0e0e0);
+  @include linear-gradient($color-bg-gray, $color-border-gray);
 }
