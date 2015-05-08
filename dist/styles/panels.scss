@@ -162,3 +162,49 @@ a.panel-link .panel, a.panel {
     margin-left: 20px;
   }
 }
+
+
+.panel.panel-steps {
+  .panel-step {
+    background: $color-bg-gray;
+    border-bottom: 1px solid $color-border-gray;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .panel-step-num {
+    background: $color-bg-gray;
+    width: 80px;
+    float: left;
+
+    i.fa {
+      font-size: 36px;
+      text-align: center;
+      margin: 30px 0 0;
+      width: 100%;
+    }
+
+    h3 {
+      color: $color-bright-blue;
+      font-size: 36px;
+      font-weight: $weight-semibold;
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+
+  .panel-step-info {
+    h3 {
+      font-size: 18px;
+      font-weight: $weight-semibold;
+      margin: 0 0 16px;
+    }
+
+    margin-left: 80px;
+    padding: 30px;
+    border-left: 1px solid $color-bg-gray;
+    background: white;
+  }
+}

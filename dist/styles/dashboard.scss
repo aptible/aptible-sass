@@ -92,3 +92,122 @@ header.resource-header {
     }
   }
 }
+
+.stack-select-button.dropdown-toggle {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  margin-left: -6px;
+
+  .resource-title {
+    margin: 0 8px 0 0;
+  }
+
+  i.fa.fa-chevron-down {
+    color: $color-primary;
+    vertical-align: 1px;
+  }
+}
+
+.resource-metadata-button {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  background: #f0f0f0;
+  border-radius: 3px;
+  text-align: center;
+  color: $color-light;
+
+  i.fa {
+    margin: 0;
+    vertical-align: -6px;
+  }
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.resource-metadata-item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  &.with-image {
+    margin-left: 40px;
+
+    .resource-metadata-title {
+      margin: -1px 0 7px;
+    }
+  }
+
+  .resource-metadata-image {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-left: -40px;
+
+    img {
+      border-radius: 3px;
+    }
+  }
+
+  .resource-metadata-title {
+    color: $color-light;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: $weight-semibold;
+    margin: 0 0 9px;
+  }
+
+  .resource-metadata-value {
+    color: $color-subdued;
+    font-size: 13px;
+    font-weight: $weight-normal;
+    margin: 0;
+
+    a {
+      display: inline-block;
+      margin-left: 6px;
+    }
+  }
+}
+
+.panel-body {
+  .resource-metadata-item {
+  }
+
+  .resource-metadata-title {
+
+  }
+
+  .resource-metadata-value {
+    font-size: 13px;
+    color: $color-light;
+  }
+}
+
+.resource-navigation {
+  margin: 0 0 30px;
+
+  > li {
+    > a {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: $weight-semibold;
+      color: $color-subdued;
+    }
+
+    &.active {
+      > a, > a:link, > a:active, > a:focus, a:hover {
+        color: $color-primary;
+        background: $color-bg-gray;
+        outline: 0;
+      }
+
+      a:hover {
+        cursor: default;
+      }
+    }
+  }
+}
