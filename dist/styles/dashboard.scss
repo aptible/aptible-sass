@@ -201,7 +201,7 @@ header.resource-header {
     &.active {
       > a, > a:link, > a:active, > a:focus, a:hover {
         color: $color-primary;
-        background: $color-bg-gray;
+        background: #eaeaea;
         outline: 0;
       }
 

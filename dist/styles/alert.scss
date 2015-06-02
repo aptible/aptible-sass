@@ -1,14 +1,19 @@
 .alert {
   &.alert-success {
     background: #2ecc71;
+    color: #fff;
+    border: 0;
   }
 
   &.alert-danger {
     background: #c0392b;
     color: #fff;
+    border: 0;
   }
 
   &.alert-warning {
     background: #f1c40f;
+    color: #664409;
+    border: 0;
   }
 }
