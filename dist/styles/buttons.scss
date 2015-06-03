@@ -4,6 +4,10 @@ a:visited,
 a:active {
   color: $color-bright-blue;
 
+  &.danger {
+    color: $color-danger;
+  }
+
   &.btn-primary,
   &.btn-success {
     color: #fff;
@@ -25,7 +29,7 @@ a:hover {
   }
 }
 
-a.btn {
+a.btn, button.btn {
   padding: 8px 12px 6px;
 
   &.btn-sm {
