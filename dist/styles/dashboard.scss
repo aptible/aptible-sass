@@ -211,3 +211,15 @@ header.resource-header {
     }
   }
 }
+
+.sort-group {
+  margin: 0 0 10px;
+}
+
+.sort-header {
+  font-weight: $weight-semibold;
+  color: $color-light;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
