@@ -9,6 +9,12 @@
   margin-bottom: 20px;
 }
 
+.input-group {
+  position: relative;
+  border-collapse: separate;
+  display: table;
+}
+
 .input-group-addon {
   background-color: $color-bg-gray;
   border-color: $color-border-gray;
